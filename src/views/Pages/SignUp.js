@@ -87,8 +87,7 @@ function SignUp() {
               fontWeight='normal'
               mt='10px'
               w={{ base: "100%", md: "90%", lg: "90%", xl: "80%" }}>
-              Use these awesome forms to login or create new account in your
-              project for free.
+              You are just one step behind to enter the world of NFTs
             </Text>
           </Flex>
           <GradientBorder p='2px' me={{ base: "none", lg: "30px", xl: "none" }}>
@@ -306,7 +305,7 @@ function SignUp() {
                 mt='0px'>
                 <Text color={textColor} fontWeight='medium'>
                   Already have an account?
-                  <Link
+                  <Link 
                     color={titleColor}
                     as='span'
                     ms='5px'
@@ -345,14 +344,14 @@ function SignUp() {
             flexDirection='column'
             justifyContent='center'
             alignItems='center'
-            position='absolute'>
+            >
             <Text
               textAlign='center'
               color='white'
               letterSpacing='8px'
               fontSize='20px'
               fontWeight='500'>
-              INSPIRED BY THE FUTURE:
+              YOUR NEW ASSEST IS IN THE DIGITAL WORLD
             </Text>
             <Text
               textAlign='center'
@@ -362,7 +361,7 @@ function SignUp() {
               fontWeight='bold'
               bgClip='text !important'
               bg='linear-gradient(94.56deg, #FFFFFF 79.99%, #21242F 102.65%)'>
-              THE VISION UI DASHBOARD
+              - NFT
             </Text>
           </Box>
         </Box>

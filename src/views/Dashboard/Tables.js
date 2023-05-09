@@ -52,7 +52,7 @@ function Tables() {
       <Card overflowX={{ sm: "scroll", xl: "hidden" }} pb='0px'>
         <CardHeader p='6px 0px 22px 0px'>
           <Text fontSize='lg' color='#fff' fontWeight='bold'>
-            Authors Table
+           TOP COLLECTIONS TABLE
           </Text>
         </CardHeader>
         <CardBody>
@@ -64,25 +64,25 @@ function Tables() {
                   color='gray.400'
                   fontFamily='Plus Jakarta Display'
                   borderBottomColor='#56577A'>
-                  Author
+                  Collection
                 </Th>
                 <Th
                   color='gray.400'
                   fontFamily='Plus Jakarta Display'
                   borderBottomColor='#56577A'>
-                  Function
+                  Floor price
                 </Th>
                 <Th
                   color='gray.400'
                   fontFamily='Plus Jakarta Display'
                   borderBottomColor='#56577A'>
-                  Status
+                  Owners
                 </Th>
                 <Th
                   color='gray.400'
                   fontFamily='Plus Jakarta Display'
                   borderBottomColor='#56577A'>
-                  Employed
+                  24HR change
                 </Th>
                 <Th borderBottomColor='#56577A'></Th>
               </Tr>
@@ -111,7 +111,7 @@ function Tables() {
         <CardHeader p='6px 0px 22px 0px'>
           <Flex direction='column'>
             <Text fontSize='lg' color='#fff' fontWeight='bold' mb='.5rem'>
-              Projects Table
+              NFTs TABLE
             </Text>
             <Flex align='center'>
               <Icon
@@ -139,25 +139,25 @@ function Tables() {
                   color='gray.400'
                   fontFamily='Plus Jakarta Display'
                   borderBottomColor='#56577A'>
-                  Companies
+                  NFTs
                 </Th>
                 <Th
                   color='gray.400'
                   fontFamily='Plus Jakarta Display'
                   borderBottomColor='#56577A'>
-                  Budget
+                  Price
                 </Th>
                 <Th
                   color='gray.400'
                   fontFamily='Plus Jakarta Display'
                   borderBottomColor='#56577A'>
-                  Status
+                  Price Change
                 </Th>
                 <Th
                   color='gray.400'
                   fontFamily='Plus Jakarta Display'
                   borderBottomColor='#56577A'>
-                  Completion
+                  Owner Distribution
                 </Th>
                 <Th borderBottomColor='#56577A'></Th>
               </Tr>

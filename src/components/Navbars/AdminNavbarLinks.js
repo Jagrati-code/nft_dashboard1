@@ -169,7 +169,7 @@ export default function HeaderLinks(props) {
               _focus={{
                 bg: "transparent",
               }}
-              _hover={{ bg: "transparent" }}
+            
               mb='10px'>
               <ItemContent
                 time='2 days ago'

@@ -66,7 +66,7 @@ export default function AuthNavbar(props) {
   let navbarPosition = "fixed";
   var brand = (
     <Link
-      href={`${process.env.PUBLIC_URL}/#/`}
+  href={`${process.env.PUBLIC_URL}/#/`}
       target='_blank'
       display='flex'
       lineHeight='100%'
@@ -78,7 +78,7 @@ export default function AuthNavbar(props) {
         bg='linear-gradient(97.89deg, #FFFFFF 70.67%, rgba(117, 122, 140, 0) 108.55%)'
         bgClip='text'>
         <Text fontSize='sm' letterSpacing='3px' mt='3px' color='transparent'>
-          {logoText}
+          NFT WORLD
         </Text>
       </Box>
     </Link>
@@ -89,7 +89,7 @@ export default function AuthNavbar(props) {
         <Button
           fontSize='sm'
           ms='0px'
-          me='0px'
+          
           px='0px'
           me={{ sm: "2px", md: "16px" }}
           color={navbarIcon}
@@ -102,7 +102,7 @@ export default function AuthNavbar(props) {
         <Button
           fontSize='sm'
           ms='0px'
-          me='0px'
+        
           px='0px'
           me={{ sm: "2px", md: "16px" }}
           color={navbarIcon}
@@ -117,7 +117,7 @@ export default function AuthNavbar(props) {
         <Button
           fontSize='sm'
           ms='0px'
-          me='0px'
+        
           px='0px'
           me={{ sm: "2px", md: "16px" }}
           color={navbarIcon}
@@ -177,7 +177,7 @@ export default function AuthNavbar(props) {
           />
         </Box>
         {linksAuth}
-        <Link href='https://creative-tim.com/product/vision-ui-dashboard-chakra'>
+        <Link href='https://cointelegraph.com/learn/what-are-nfts-and-why-are-they-revolutionizing-the-art-world'>
           <Button
             fontSize='xs'
             variant='brand'
@@ -187,7 +187,7 @@ export default function AuthNavbar(props) {
               sm: "none",
               lg: "flex",
             }}>
-            Free Download
+            Help
           </Button>
         </Link>
       </Flex>
