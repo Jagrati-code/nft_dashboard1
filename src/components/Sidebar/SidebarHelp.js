@@ -41,14 +41,14 @@ export function SidebarHelp(props) {
         <QuestionIcon color='brand.200' h='18px' w='18px' />
       </IconBox>
       <Text fontSize='sm' color='white' fontWeight='bold'>
-        Need help?
+        Know more
       </Text>
       <Text fontSize='xs' color='white' mb='10px'>
-        Please check our docs
+        Please check NFT Docs
       </Text>
       <Link
         w='100%'
-        href='https://demos.creative-tim.com/docs-vision-ui-dashboard-chakra/'>
+        href='https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq'>
         <Button
           fontSize='10px'
           fontWeight='bold'
@@ -60,7 +60,7 @@ export function SidebarHelp(props) {
             transform: "none",
             borderColor: "transparent",
           }}
-          _active='none'
+          
           _focus={{
             boxShadow: "none",
           }}

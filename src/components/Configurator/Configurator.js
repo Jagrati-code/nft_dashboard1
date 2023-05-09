@@ -64,7 +64,7 @@ export default function Configurator(props) {
           <DrawerHeader pt='24px' px='24px'>
             <DrawerCloseButton color='white' />
             <Text color='white' fontSize='xl' fontWeight='bold' mt='16px'>
-              Vision UI Configurator
+              Configurator
             </Text>
             <Text color='white' fontSize='md' mb='16px'>
               See your dashboard options.
@@ -99,7 +99,7 @@ export default function Configurator(props) {
               <Box>
                 <Box>
                   <Link
-                    href='https://www.creative-tim.com/product/vision-ui-dashboard-chakra'
+                    href='#help'
                     w='100%'
                     mb='16px'>
                     <Button
@@ -110,11 +110,11 @@ export default function Configurator(props) {
                       fontSize='xs'
                       variant='brand'
                       px='30px'>
-                      Free Download
+                      Get Help
                     </Button>
                   </Link>
                   <Link
-                    href='https://demos.creative-tim.com/docs-vision-ui-dashboard-chakra/'
+                    href='https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq'
                     w='100%'>
                     <Button
                       w='100%'
@@ -136,7 +136,7 @@ export default function Configurator(props) {
                     href='https://github.com/creativetimofficial/vision-ui-dashboard-chakra'
                     data-icon='octicon-star'
                     data-show-count='true'
-                    aria-label='Star creativetimofficial/vision-ui-dashboard-chakra on GitHub'>
+                    aria-label='GitHub'>
                     Star
                   </GitHubButton>
                 </Flex>

@@ -41,39 +41,19 @@ export default function AuthFooter(props) {
         &copy; {1900 + new Date().getYear()},{" "}
         <Text as='span' mx='2px'>
           {document.documentElement.dir === "rtl"
-            ? " مصنوع من ❤️ بواسطة"
-            : "Made with ❤️ by "}
+            ? "Made by IT TECTS"
+            : "Made by IT TECTS"}
         </Text>
-        <Link href='https://www.simmmple.com' target='_blank'>
-          {document.documentElement.dir === "rtl"
-            ? " توقيت الإبداعية"
-            : "Simmmple "}
-        </Link>
-        &
-        <Link href='https://www.creative-tim.com' target='_blank'>
-          {document.documentElement.dir === "rtl" ? "سيممبل " : " Creative Tim"}
-        </Link>
+       
         {document.documentElement.dir === "rtl"
-          ? "للحصول على ويب أفضل"
-          : " for a better web"}
+          ? ""
+          : ""}
       </Text>
       <List display='flex'>
-        <ListItem
-          me={{
-            base: "20px",
-          }}>
-          <Link color='white' fontSize='sm' href='https://www.simmmple.com'>
-            {document.documentElement.dir === "rtl"
-              ? "توقيت الإبداعية"
-              : "Simmmple"}
-          </Link>
-        </ListItem>
-        <ListItem
-          me={{
-            base: "20px",
-          }}>
-          <Link color='white' fontSize='sm' href='https://www.creative-tim.com'>
-            {document.documentElement.dir === "rtl" ? "سيممبل" : "Creative Tim"}
+        <ListItem>
+         
+          <Link color='white' fontSize='sm' href='#'>
+            {document.documentElement.dir === "rtl" ? "IT TECTS" : "IT TECTS"}
           </Link>
         </ListItem>
         <ListItem
@@ -83,17 +63,17 @@ export default function AuthFooter(props) {
           <Link
             color='white'
             fontSize='sm'
-            href='#blog'
-            href='https://creative-tim.com/blog'>
-            {document.documentElement.dir === "rtl" ? "مدونة" : "Blog"}
+          
+            href='#blog'>
+            {document.documentElement.dir === "rtl" ? "Blog" : "Blog"}
           </Link>
         </ListItem>
         <ListItem>
           <Link
             color='white'
-            href='#license'
-            href='https://www.creative-tim.com/license'>
-            {document.documentElement.dir === "rtl" ? "رخصة" : "License"}
+            
+            href='#license'>
+            {document.documentElement.dir === "rtl" ? "License" : "License"}
           </Link>
         </ListItem>
       </List>

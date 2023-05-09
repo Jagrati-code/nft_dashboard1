@@ -76,7 +76,7 @@ export default function Dashboard() {
 						<Flex flexDirection='row' align='center' justify='center' w='100%'>
 							<Stat me='auto'>
 								<StatLabel fontSize='sm' color='gray.400' fontWeight='bold' pb='2px'>
-									Today's Money
+									Market Capitalization
 								</StatLabel>
 								<Flex>
 									<StatNumber fontSize='lg' color='#fff'>
@@ -106,7 +106,7 @@ export default function Dashboard() {
 						<Flex flexDirection='row' align='center' justify='center' w='100%'>
 							<Stat me='auto'>
 								<StatLabel fontSize='sm' color='gray.400' fontWeight='bold' pb='2px'>
-									Today's Users
+									Total NFT Investors
 								</StatLabel>
 								<Flex>
 									<StatNumber fontSize='lg' color='#fff'>
@@ -136,7 +136,7 @@ export default function Dashboard() {
 						<Flex flexDirection='row' align='center' justify='center' w='100%'>
 							<Stat>
 								<StatLabel fontSize='sm' color='gray.400' fontWeight='bold' pb='2px'>
-									New Clients
+									New Investors
 								</StatLabel>
 								<Flex>
 									<StatNumber fontSize='lg' color='#fff'>
@@ -167,7 +167,7 @@ export default function Dashboard() {
 						<Flex flexDirection='row' align='center' justify='center' w='100%'>
 							<Stat me='auto'>
 								<StatLabel fontSize='sm' color='gray.400' fontWeight='bold' pb='2px'>
-									Total Sales
+									Total Transactions
 								</StatLabel>
 								<Flex>
 									<StatNumber fontSize='lg' color='#fff' fontWeight='bold'>
@@ -207,11 +207,11 @@ export default function Dashboard() {
 									Welcome back,
 								</Text>
 								<Text fontSize='28px' color='#fff' fontWeight='bold' mb='18px'>
-									Mark Johnson
+									User
 								</Text>
 								<Text fontSize='md' color='gray.400' fontWeight='normal' mb='auto'>
 									Glad to see you again! <br />
-									Ask me anything.
+									Explore more NFTs
 								</Text>
 								<Spacer />
 								<Flex align='center'>
@@ -253,10 +253,10 @@ export default function Dashboard() {
 					<CardHeader mb='24px'>
 						<Flex direction='column'>
 							<Text color='#fff' fontSize='lg' fontWeight='bold' mb='4px'>
-								Satisfaction Rate
+								Stability Rate
 							</Text>
 							<Text color='gray.400' fontSize='sm'>
-								From all projects
+								From all invested NFTs
 							</Text>
 						</Flex>
 					</CardHeader>
@@ -295,7 +295,7 @@ export default function Dashboard() {
 									95%
 								</Text>
 								<Text fontSize='xs' color='gray.400'>
-									Based on likes
+									Based on latest transactions
 								</Text>
 							</Flex>
 							<Text fontSize='xs' color='gray.400'>
@@ -309,7 +309,7 @@ export default function Dashboard() {
 					<Flex direction='column'>
 						<Flex justify='space-between' align='center' mb='40px'>
 							<Text color='#fff' fontSize='lg' fontWeight='bold'>
-								Referral Tracking
+								Community Tracking
 							</Text>
 							<Button borderRadius='12px' w='38px' h='38px' bg='#22234B' _hover='none' _active='none'>
 								<Icon as={IoEllipsisHorizontal} color='#7551FF' />
@@ -326,10 +326,10 @@ export default function Dashboard() {
 									borderRadius='20px'
 									mb='20px'>
 									<Text color='gray.400' fontSize='sm' mb='4px'>
-										Invited
+										Membership in
 									</Text>
 									<Text color='#fff' fontSize='lg' fontWeight='bold'>
-										145 people
+										145 communities
 									</Text>
 								</Flex>
 								<Flex
@@ -340,7 +340,7 @@ export default function Dashboard() {
 									bg='linear-gradient(126.97deg, #060C29 28.26%, rgba(4, 12, 48, 0.5) 91.2%)'
 									borderRadius='20px'>
 									<Text color='gray.400' fontSize='sm' mb='4px'>
-										Bonus
+										Links
 									</Text>
 									<Text color='#fff' fontSize='lg' fontWeight='bold'>
 										1,465
@@ -387,13 +387,13 @@ export default function Dashboard() {
 					<CardHeader mb='20px' ps='22px'>
 						<Flex direction='column' alignSelf='flex-start'>
 							<Text fontSize='lg' color='#fff' fontWeight='bold' mb='6px'>
-								Sales Overview
+								Comparison
 							</Text>
 							<Text fontSize='md' fontWeight='medium' color='gray.400'>
 								<Text as='span' color='green.400' fontWeight='bold'>
 									(+5%) more
 								</Text>{' '}
-								in 2021
+								in 2022
 							</Text>
 						</Flex>
 					</CardHeader>
@@ -423,13 +423,13 @@ export default function Dashboard() {
 							</Box>
 							<Flex direction='column' mt='24px' mb='36px' alignSelf='flex-start'>
 								<Text fontSize='lg' color='#fff' fontWeight='bold' mb='6px'>
-									Active Users
+									Value of recent purchased NFTs
 								</Text>
 								<Text fontSize='md' fontWeight='medium' color='gray.400'>
 									<Text as='span' color='green.400' fontWeight='bold'>
 										(+23%)
 									</Text>{' '}
-									than last week
+									increased in assests value
 								</Text>
 							</Flex>
 							<SimpleGrid gap={{ sm: '12px' }} columns={4}>
@@ -439,7 +439,7 @@ export default function Dashboard() {
 											<WalletIcon h={'15px'} w={'15px'} color='#fff' />
 										</IconBox>
 										<Text fontSize='sm' color='gray.400'>
-											Users
+											Transactions
 										</Text>
 									</Flex>
 									<Text
@@ -448,7 +448,7 @@ export default function Dashboard() {
 										fontWeight='bold'
 										mb='6px'
 										my='6px'>
-										32,984
+										32
 									</Text>
 									<Progress colorScheme='brand' bg='#2D2E5F' borderRadius='30px' h='5px' value={20} />
 								</Flex>
@@ -467,7 +467,7 @@ export default function Dashboard() {
 										fontWeight='bold'
 										mb='6px'
 										my='6px'>
-										2.42m
+										240
 									</Text>
 									<Progress colorScheme='brand' bg='#2D2E5F' borderRadius='30px' h='5px' value={90} />
 								</Flex>
@@ -477,7 +477,7 @@ export default function Dashboard() {
 											<CartIcon h={'15px'} w={'15px'} color='#fff' />
 										</IconBox>
 										<Text fontSize='sm' color='gray.400'>
-											Sales
+											Amount
 										</Text>
 									</Flex>
 									<Text
@@ -520,13 +520,13 @@ export default function Dashboard() {
 					<CardHeader p='12px 0px 28px 0px'>
 						<Flex direction='column'>
 							<Text fontSize='lg' color='#fff' fontWeight='bold' pb='8px'>
-								Projects
+								Your Communities
 							</Text>
 							<Flex align='center'>
 								<Icon as={IoCheckmarkDoneCircleSharp} color='teal.300' w={4} h={4} pe='3px' />
 								<Text fontSize='sm' color='gray.400' fontWeight='normal'>
 									<Text fontWeight='bold' as='span'>
-										30 done
+										6 done
 									</Text>{' '}
 									this month.
 								</Text>
@@ -541,16 +541,16 @@ export default function Dashboard() {
 									color='gray.400'
 									fontFamily='Plus Jakarta Display'
 									borderBottomColor='#56577A'>
-									Companies
+									Top Communities
 								</Th>
 								<Th color='gray.400' fontFamily='Plus Jakarta Display' borderBottomColor='#56577A'>
-									Members
+									NFTs
 								</Th>
 								<Th color='gray.400' fontFamily='Plus Jakarta Display' borderBottomColor='#56577A'>
-									Budget
+									Royalty
 								</Th>
 								<Th color='gray.400' fontFamily='Plus Jakarta Display' borderBottomColor='#56577A'>
-									Completion
+									Your Ownership
 								</Th>
 							</Tr>
 						</Thead>
@@ -575,13 +575,13 @@ export default function Dashboard() {
 					<CardHeader mb='32px'>
 						<Flex direction='column'>
 							<Text fontSize='lg' color='#fff' fontWeight='bold' mb='6px'>
-								Orders overview
+								Recommondation
 							</Text>
 							<Flex align='center'>
 								<Icon as={AiFillCheckCircle} color='green.500' w='15px' h='15px' me='5px' />
 								<Text fontSize='sm' color='gray.400' fontWeight='normal'>
 									<Text fontWeight='bold' as='span' color='gray.400'>
-										+30%
+										Top NFTs 
 									</Text>{' '}
 									this month
 								</Text>
