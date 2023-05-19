@@ -1,27 +1,10 @@
-/*!
-
-=========================================================
-* Vision UI Free Chakra - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/vision-ui-free-chakra
-* Copyright 2021 Creative Tim (https://www.creative-tim.com/)
-* Licensed under MIT (https://github.com/creativetimofficial/vision-ui-free-chakra/blob/master LICENSE.md)
-
-* Design and Coded by Simmmple & Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-
 /*eslint-disable*/
 import React from "react";
 import { Flex, Link, List, ListItem, Text } from "@chakra-ui/react";
 
 export default function AuthFooter(props) {
   return (
+    
     <Flex
       flexDirection={{
         base: "column",
@@ -32,6 +15,7 @@ export default function AuthFooter(props) {
       justifyContent='space-between'
       pb='20px'
       fontSize='sm'>
+
       <Text
         color='white'
         textAlign={{
@@ -49,14 +33,16 @@ export default function AuthFooter(props) {
           ? ""
           : ""}
       </Text>
+
       <List display='flex'>
-        <ListItem>
+        {/* <ListItem>
          
           <Link color='white' fontSize='sm' href='#'>
             {document.documentElement.dir === "rtl" ? "IT TECTS" : "IT TECTS"}
           </Link>
-        </ListItem>
-        <ListItem
+        </ListItem> */}
+
+        {/* <ListItem
           me={{
             base: "20px",
           }}>
@@ -67,16 +53,19 @@ export default function AuthFooter(props) {
             href='#blog'>
             {document.documentElement.dir === "rtl" ? "Blog" : "Blog"}
           </Link>
-        </ListItem>
-        <ListItem>
+        </ListItem> */}
+
+        {/* <ListItem>
           <Link
             color='white'
             
             href='#license'>
             {document.documentElement.dir === "rtl" ? "License" : "License"}
           </Link>
-        </ListItem>
+        </ListItem> */}
+
       </List>
+      
     </Flex>
   );
 }

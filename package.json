@@ -2,7 +2,7 @@
   "name": "vision-dashboard-chakra",
   "version": "1.0.1",
   "private": true,
-  "homepage": "https://demos.creative-tim.com/vision-ui-dashboard-chakra/#/",
+  "homepage": "https://demos.creative-tim.com/IT_Techts/#/",
   "dependencies": {
     "@chakra-ui/icons": "^1.1.5",
     "@chakra-ui/react": "^1.8.8",
@@ -40,6 +40,7 @@
     "react-error-overlay": "6.0.9"
   },
   "target": "web",
+  "proxy": "http://localhost:8800/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && gulp licenses",
@@ -80,5 +81,4 @@
       "react-app"
     ]
   }
-  
 }
