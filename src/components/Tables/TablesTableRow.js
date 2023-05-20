@@ -32,15 +32,15 @@ function TablesTableRow(props) {
   const {
     logo,
     name,
-    email,
-    subdomain,
-    domain,
+    category,
+    collectionid,
+    ownerid,
     status,
     date,
     lastItem,
   } = props;
-  const textColor = useColorModeValue("gray.700", "white");
-  const bgStatus = useColorModeValue("gray.400", "#1a202c");
+  //const textColor = useColorModeValue("gray.700", "white");
+  //const bgStatus = useColorModeValue("gray.400", "#1a202c");
   const colorStatus = useColorModeValue("white", "gray.400");
 
   return (
@@ -67,7 +67,7 @@ function TablesTableRow(props) {
               {name}
             </Text>
             <Text fontSize='sm' color='gray.400' fontWeight='normal'>
-              {email}
+              {category}
             </Text>
           </Flex>
         </Flex>
@@ -79,24 +79,15 @@ function TablesTableRow(props) {
         minW='150px'>
         <Flex direction='column'>
           <Text fontSize='sm' color='#fff' fontWeight='normal'>
-            {domain}
+            {ownerid}
           </Text>
-          <Text fontSize='sm' color='gray.400' fontWeight='normal'>
-            {subdomain}
-          </Text>
+          
         </Flex>
       </Td>
       <Td border={lastItem ? "none" : null} borderBottomColor='#56577A'>
-        <Badge
-          bg={status === "Online" ? "green.400" : "transparent"}
-          color={status === "Online" ? "white" : colorStatus}
-          fontSize='sm'
-          p='3px 10px'
-          borderRadius='8px'
-          border={status === "Online" ? "none" : "1px solid #fff"}
-          fontWeight='normal'>
-          {status}
-        </Badge>
+        <Text fontSize='sm' color='#fff' fontWeight='normal'>
+          {collectionid}
+        </Text>
       </Td>
       <Td border={lastItem ? "none" : null} borderBottomColor='#56577A'>
         <Text fontSize='sm' color='#fff' fontWeight='normal'>

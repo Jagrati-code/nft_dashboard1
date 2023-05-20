@@ -24,6 +24,7 @@ import RTLPage from "views/RTL/RTLPage.js";
 import Profile from "views/Dashboard/Profile.js";
 import SignIn from "views/Pages/SignIn.js";
 import SignUp from "views/Pages/SignUp.js";
+import Nft from "views/Dashboard/Nft.js";
 
 import {
   HomeIcon,
@@ -58,6 +59,14 @@ var dashRoutes = [
     rtlName: "لوحة القيادة",
     icon: <CreditIcon color='inherit' />,
     component: Billing,
+    layout: "/admin",
+  },
+  {
+    path: "/nft",
+    name: "Nft",
+    rtlName: "لوحة القيادة",
+    icon: <CreditIcon color='inherit' />,
+    component: Nft,
     layout: "/admin",
   },
   {

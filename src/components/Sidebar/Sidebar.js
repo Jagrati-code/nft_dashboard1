@@ -240,7 +240,7 @@ function Sidebar(props) {
           borderRadius={sidebarRadius}>
           <Box>{brand}</Box>
           <Stack direction='column' mb='40px'>
-            <Box>NFT DASHBOARD</Box>
+            <Box>{links}</Box>
           </Stack>
           <SidebarHelp></SidebarHelp>
         </Box>
