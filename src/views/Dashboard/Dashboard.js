@@ -211,7 +211,7 @@ export default function Dashboard() {
 								</Text>
 								<Text fontSize='md' color='gray.400' fontWeight='normal' mb='auto'>
 									Glad to see you again! <br />
-									Explore more NFTs
+									
 								</Text>
 								<Spacer />
 								<Flex align='center'>
@@ -228,7 +228,7 @@ export default function Dashboard() {
 											transition='all .3s ease'
 											my={{ sm: '1.5rem', lg: '0px' }}
 											_hover={{ me: '4px' }}>
-											Tab to record
+											Explore NFTs
 										</Text>
 										<Icon
 											as={BsArrowRight}

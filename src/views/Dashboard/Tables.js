@@ -70,19 +70,19 @@ function Tables() {
                   color='gray.400'
                   fontFamily='Plus Jakarta Display'
                   borderBottomColor='#56577A'>
-                  Floor price
+                  OwnerID
                 </Th>
                 <Th
                   color='gray.400'
                   fontFamily='Plus Jakarta Display'
                   borderBottomColor='#56577A'>
-                  Owners
+                  CollectionID
                 </Th>
                 <Th
                   color='gray.400'
                   fontFamily='Plus Jakarta Display'
                   borderBottomColor='#56577A'>
-                  24HR change
+                  Date
                 </Th>
                 <Th borderBottomColor='#56577A'></Th>
               </Tr>
@@ -93,9 +93,9 @@ function Tables() {
                   <TablesTableRow
                     name={row.name}
                     logo={row.logo}
-                    email={row.email}
-                    subdomain={row.subdomain}
-                    domain={row.domain}
+                    category={row.category}
+                    collectionid={row.collectionid}
+                    ownerid={row.ownerid}
                     status={row.status}
                     date={row.date}
                     lastItem={index === arr.length - 1 ? true : false}
@@ -106,8 +106,8 @@ function Tables() {
           </Table>
         </CardBody>
       </Card>
-      {/* Projects Table */}
-      <Card my='22px' overflowX={{ sm: "scroll", xl: "hidden" }} pb='0px'>
+      Projects Table
+      {/* <Card my='22px' overflowX={{ sm: "scroll", xl: "hidden" }} pb='0px'>
         <CardHeader p='6px 0px 22px 0px'>
           <Flex direction='column'>
             <Text fontSize='lg' color='#fff' fontWeight='bold' mb='.5rem'>
@@ -178,7 +178,7 @@ function Tables() {
             </Tbody>
           </Table>
         </CardBody>
-      </Card>
+      </Card> */}
     </Flex>
   );
 }

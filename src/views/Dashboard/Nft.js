@@ -19,75 +19,19 @@ import CardBody from "components/Card/CardBody.js";
 
 // Table Components
 import TablesProjectRow from "components/Tables/TablesProjectRow";
-import TablesTableRow from "components/Tables/TablesTableRow";
+//import TablesTableRow from "components/Tables/TablesTableRow";
 
 // Data
-import { tablesProjectData, tablesTableData } from "variables/general";
+import { tablesProjectData } from "variables/general";
 
 // Icons
 import { AiFillCheckCircle } from "react-icons/ai";
 
-function RTLPage() {
+function Nft() {
   return (
     <Flex direction='column' pt={{ base: "120px", md: "75px" }}>
       {/* Authors Table */}
-      <Card overflowX={{ sm: "scroll", xl: "hidden" }} pb='0px'>
-        <CardHeader p='6px 0px 22px 0px'>
-          <Text fontSize='lg' color='#fff' fontWeight='bold'>
-           TOP COLLECTIONS TABLE
-          </Text>
-        </CardHeader>
-        <CardBody>
-          <Table variant='simple' color='#fff'>
-            <Thead>
-              <Tr my='.8rem' ps='0px' color='gray.400'>
-                <Th
-                  ps='0px'
-                  color='gray.400'
-                  fontFamily='Plus Jakarta Display'
-                  borderBottomColor='#56577A'>
-                  Collection
-                </Th>
-                <Th
-                  color='gray.400'
-                  fontFamily='Plus Jakarta Display'
-                  borderBottomColor='#56577A'>
-                  Floor price
-                </Th>
-                <Th
-                  color='gray.400'
-                  fontFamily='Plus Jakarta Display'
-                  borderBottomColor='#56577A'>
-                  Owners
-                </Th>
-                <Th
-                  color='gray.400'
-                  fontFamily='Plus Jakarta Display'
-                  borderBottomColor='#56577A'>
-                  24HR change
-                </Th>
-                <Th borderBottomColor='#56577A'></Th>
-              </Tr>
-            </Thead>
-            <Tbody>
-              {tablesTableData.map((row, index, arr) => {
-                return (
-                  <TablesTableRow
-                    name={row.name}
-                    logo={row.logo}
-                    email={row.email}
-                    subdomain={row.subdomain}
-                    domain={row.domain}
-                    status={row.status}
-                    date={row.date}
-                    lastItem={index === arr.length - 1 ? true : false}
-                  />
-                );
-              })}
-            </Tbody>
-          </Table>
-        </CardBody>
-      </Card>
+      {/*  */}
       {/* Projects Table */}
       <Card my='22px' overflowX={{ sm: "scroll", xl: "hidden" }} pb='0px'>
         <CardHeader p='6px 0px 22px 0px'>
@@ -127,21 +71,26 @@ function RTLPage() {
                   color='gray.400'
                   fontFamily='Plus Jakarta Display'
                   borderBottomColor='#56577A'>
+                  NFT ID
+                </Th>
+                <Th
+                  color='gray.400'
+                  fontFamily='Plus Jakarta Display'
+                  borderBottomColor='#56577A'>
                   Price
                 </Th>
                 <Th
                   color='gray.400'
                   fontFamily='Plus Jakarta Display'
                   borderBottomColor='#56577A'>
-                  Price Change
+                  Owner
                 </Th>
                 <Th
                   color='gray.400'
                   fontFamily='Plus Jakarta Display'
                   borderBottomColor='#56577A'>
-                  Owner Distribution
+                  Collection ID
                 </Th>
-                <Th borderBottomColor='#56577A'></Th>
               </Tr>
             </Thead>
             <Tbody>
@@ -150,10 +99,10 @@ function RTLPage() {
                   <TablesProjectRow
                     name={row.name}
                     logo={row.logo}
-                    status={row.status}
-                    budget={row.budget}
-                    progression={row.progression}
-                    lastItem={index === arr.length - 1 ? true : false}
+                    value={row.value}
+                    nftid={row.nftid}
+                    owner={row.owner}
+                    collectionid={row.collectionid}
                   />
                 );
               })}
@@ -165,4 +114,4 @@ function RTLPage() {
   );
 }
 
-export default RTLPage;
+export default Nft;
