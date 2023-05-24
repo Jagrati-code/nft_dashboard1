@@ -1,22 +1,3 @@
-/*!
-
-=========================================================
-* Vision UI Free Chakra - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/vision-ui-free-chakra
-* Copyright 2021 Creative Tim (https://www.creative-tim.com/)
-* Licensed under MIT (https://github.com/creativetimofficial/vision-ui-free-chakra/blob/master LICENSE.md)
-
-* Design and Coded by Simmmple & Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-
-// Chakra Imports
 import {
   Box,
   Button,
@@ -32,6 +13,7 @@ import {
   DarkMode,
   LightMode,
 } from "@chakra-ui/react";
+
 import GitHubButton from "react-github-btn";
 import { Separator } from "components/Separator/Separator";
 import PropTypes from "prop-types";
@@ -39,7 +21,7 @@ import React, { useState } from "react";
 import { FaTwitter, FaFacebook } from "react-icons/fa";
 
 export default function Configurator(props) {
-  const { secondary, isOpen, onClose, fixed, ...rest } = props;
+  const { secondary, isOpen, onClose, fixed } = props;
   const [switched, setSwitched] = useState(props.isChecked);
 
   // Chakra Color Mode
@@ -176,6 +158,7 @@ export default function Configurator(props) {
     </>
   );
 }
+
 Configurator.propTypes = {
   secondary: PropTypes.bool,
   isOpen: PropTypes.func,

@@ -1,22 +1,4 @@
-/*!
-
-=========================================================
-* Vision UI Free Chakra - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/vision-ui-free-chakra
-* Copyright 2021 Creative Tim (https://www.creative-tim.com/)
-* Licensed under MIT (https://github.com/creativetimofficial/vision-ui-free-chakra/blob/master LICENSE.md)
-
-* Design and Coded by Simmmple & Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-
-import React from "react";
+import React, { useState } from "react";
 // Chakra imports
 import {
   Box,
@@ -40,11 +22,58 @@ import AuthFooter from "components/Footer/AuthFooter";
 import GradientBorder from "components/GradientBorder/GradientBorder";
 
 function SignIn() {
+
   const titleColor = "white";
   const textColor = "gray.400";
 
+  const [email,setEmail] = useState("");
+  const [password,setPassword] = useState("");
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  }
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  }
+
+  const handleSignIn = async () => {
+
+    console.log("Email : ", email , " Password: ", password);
+
+    try {
+
+      const response = await fetch('/api/auth/login', {
+
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: {
+          "email" : email,
+          "password" : password
+        },
+
+      });
+
+      const result = await response.json();
+      console.log(result); // Handle the response data
+
+      // Reset the form
+
+     
+    } catch (error) {
+      console.error('Error:', error);
+    }
+
+  }
+
+
+
   return (
+
     <Flex position='relative'>
+
       <Flex
         minH='100vh'
         h={{ base: "120vh", lg: "fit-content" }}
@@ -54,6 +83,7 @@ function SignIn() {
         pt={{ sm: "100px", md: "0px" }}
         flexDirection='column'
         me={{ base: "auto", lg: "50px", xl: "auto" }}>
+
         <Flex
           alignItems='center'
           justifyContent='start'
@@ -62,15 +92,18 @@ function SignIn() {
           ms={{ base: "auto", lg: "auto" }}
           w={{ base: "100%", md: "50%", lg: "450px" }}
           px='50px'>
+
           <Flex
             direction='column'
             w='100%'
             background='transparent'
             mt={{ base: "50px", md: "150px", lg: "160px", xl: "245px" }}
             mb={{ base: "60px", lg: "95px" }}>
+
             <Heading color={titleColor} fontSize='32px' mb='10px'>
               Nice to see you!
             </Heading>
+
             <Text
               mb='36px'
               ms='4px'
@@ -79,7 +112,9 @@ function SignIn() {
               fontSize='14px'>
               Enter your email and password to sign in
             </Text>
+
             <FormControl>
+
               <FormLabel
                 ms='4px'
                 fontSize='sm'
@@ -87,6 +122,7 @@ function SignIn() {
                 color='white'>
                 Email
               </FormLabel>
+
               <GradientBorder
                 mb='24px'
                 w={{ base: "100%", lg: "fit-content" }}
@@ -102,9 +138,12 @@ function SignIn() {
                   maxW='100%'
                   h='46px'
                   placeholder='Your email adress'
+                  onChange={handleEmailChange}
                 />
               </GradientBorder>
+
             </FormControl>
+
             <FormControl>
               <FormLabel
                 ms='4px'
@@ -128,10 +167,12 @@ function SignIn() {
                   maxW='100%'
                   type='password'
                   placeholder='Your password'
+                  onChange={handlePasswordChange}
                 />
               </GradientBorder>
             </FormControl>
-            <FormControl display='flex' alignItems='center'>
+
+            {/* <FormControl display='flex' alignItems='center'>
               <DarkMode>
                 <Switch id='remember-login' colorScheme='brand' me='10px' />
               </DarkMode>
@@ -143,41 +184,38 @@ function SignIn() {
                 color='white'>
                 Remember me
               </FormLabel>
-            </FormControl>
+            </FormControl> */}
+
             <Button
               variant='brand'
-              fontSize='10px'
+              fontSize='15px'
               type='submit'
               w='100%'
               maxW='350px'
               h='45'
               mb='20px'
-              mt='20px'>
+              mt='20px'
+              onClick={handleSignIn}
+              >
               SIGN IN
             </Button>
 
-            <Flex
-              flexDirection='column'
-              justifyContent='center'
-              alignItems='center'
-              maxW='100%'
-              mt='0px'>
+            <Flex flexDirection='column' justifyContent='center' alignItems='center' maxW='100%' mt='0px'>
               <Text color={textColor} fontWeight='medium'>
                 Don't have an account?
-                <Link color={titleColor} as='span' ms='5px' fontWeight='bold'>
-                  Sign Up
+                <Link color={titleColor} href={`${process.env.PUBLIC_URL}/#/auth/signup`} ms='5px' fontWeight='bold'> 
+                  Sign Up 
                 </Link>
               </Text>
             </Flex>
+
           </Flex>
         </Flex>
-        <Box
-          w={{ base: "335px", md: "450px" }}
-          mx={{ base: "auto", lg: "unset" }}
-          ms={{ base: "auto", lg: "auto" }}
-          mb='80px'>
+
+        <Box w={{ base: "335px", md: "450px" }} mx={{ base: "auto", lg: "unset" }} ms={{ base: "auto", lg: "auto" }} mb='80px'>
           <AuthFooter />
         </Box>
+
         <Box
           display={{ base: "none", lg: "block" }}
           overflowX='hidden'
@@ -219,7 +257,9 @@ function SignIn() {
             </Text>
           </Box>
         </Box>
+        
       </Flex>
+
     </Flex>
   );
 }
