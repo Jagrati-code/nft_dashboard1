@@ -1,20 +1,3 @@
-/*!
-
-=========================================================
-* Vision UI Free Chakra - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/vision-ui-free-chakra
-* Copyright 2021 Creative Tim (https://www.creative-tim.com/)
-* Licensed under MIT (https://github.com/creativetimofficial/vision-ui-free-chakra/blob/master LICENSE.md)
-
-* Design and Coded by Simmmple & Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 
 import React from "react";
 
@@ -55,11 +38,10 @@ function Tables() {
       
       <Card overflowX={{ sm: "scroll", xl: "hidden" }} pb='0px'>
              <SearchBar>
-              <IconButton onClick="filterBySearch()">
+              <IconButton>
                 Search
               </IconButton>
-
-     </SearchBar>
+            </SearchBar>
 
         <CardHeader p='6px 0px 22px 0px'>
           <Text fontSize='lg' color='#fff' fontWeight='bold'>

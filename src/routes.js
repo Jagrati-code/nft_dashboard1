@@ -1,20 +1,4 @@
-/*!
 
-=========================================================
-* Vision UI Free Chakra - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/vision-ui-free-chakra
-* Copyright 2021 Creative Tim (https://www.creative-tim.com/)
-* Licensed under MIT (https://github.com/creativetimofficial/vision-ui-free-chakra/blob/master LICENSE.md)
-
-* Design and Coded by Simmmple & Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 
 // import
 import Dashboard from "views/Dashboard/Dashboard.js";
@@ -40,7 +24,6 @@ var dashRoutes = [
   {
     path: "/dashboard",
     name: "Dashboard",
-    rtlName: "لوحة القيادة",
     icon: <HomeIcon color='inherit' />,
     component: Dashboard,
     layout: "/admin",
@@ -48,7 +31,6 @@ var dashRoutes = [
   {
     path: "/tables",
     name: "Tables",
-    rtlName: "لوحة القيادة",
     icon: <StatsIcon color='inherit' />,
     component: Tables,
     layout: "/admin",
@@ -56,7 +38,6 @@ var dashRoutes = [
   {
     path: "/billing",
     name: "Billing",
-    rtlName: "لوحة القيادة",
     icon: <CreditIcon color='inherit' />,
     component: Billing,
     layout: "/admin",
@@ -64,7 +45,6 @@ var dashRoutes = [
   {
     path: "/nft",
     name: "Nft",
-    rtlName: "لوحة القيادة",
     icon: <CreditIcon color='inherit' />,
     component: Nft,
     layout: "/admin",
@@ -72,7 +52,6 @@ var dashRoutes = [
   {
     path: "/rtl-support-page",
     name: "RTL",
-    rtlName: "آرتيإل",
     icon: <SupportIcon color='inherit' />,
     component: RTLPage,
     layout: "/rtl",
@@ -80,13 +59,11 @@ var dashRoutes = [
   {
     name: "ACCOUNT PAGES",
     category: "account",
-    rtlName: "صفحات",
     state: "pageCollapse",
     views: [
       {
         path: "/profile",
         name: "Profile",
-        rtlName: "لوحة القيادة",
         icon: <PersonIcon color='inherit' />,
         secondaryNavbar: true,
         component: Profile,
@@ -95,7 +72,6 @@ var dashRoutes = [
       {
         path: "/signin",
         name: "Sign In",
-        rtlName: "لوحة القيادة",
         icon: <DocumentIcon color='inherit' />,
         component: SignIn,
         layout: "/auth",
@@ -103,7 +79,6 @@ var dashRoutes = [
       {
         path: "/signup",
         name: "Sign Up",
-        rtlName: "لوحة القيادة",
         icon: <RocketIcon color='inherit' />,
         secondaryNavbar: true,
         component: SignUp,
