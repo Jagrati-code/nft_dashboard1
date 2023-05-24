@@ -1,5 +1,4 @@
 
-
 import React from "react";
 
 // Chakra imports
@@ -28,11 +27,24 @@ import GradientBorder from "components/GradientBorder/GradientBorder";
 import signUpImage from "assets/img/signUpImage.png";
 
 function SignUp() {
+
   const titleColor = "white";
   const textColor = "gray.400";
 
+  var signInLink = (
+    <Link 
+      color={titleColor}
+      ms='5px'
+      href={`${process.env.PUBLIC_URL}/#/auth/signin`}
+      fontWeight='bold'>
+      Sign In
+    </Link>
+  );
+
   return (
+   
     <Flex position='relative' overflow={{ lg: "hidden" }}>
+
       <Flex
         flexDirection='column'
         h={{ sm: "initial", md: "unset" }}
@@ -42,6 +54,7 @@ function SignUp() {
         justifyContent='space-between'
         pt={{ sm: "100px", md: "0px" }}
         me={{ base: "auto", lg: "50px", xl: "auto" }}>
+
         <Flex
           alignItems='center'
           justifyContent='start'
@@ -51,6 +64,7 @@ function SignUp() {
           ms={{ base: "auto", lg: "auto" }}
           mb='50px'
           w={{ base: "100%", md: "50%", lg: "42%" }}>
+            
           <Flex
             direction='column'
             textAlign='center'
@@ -58,6 +72,7 @@ function SignUp() {
             align='center'
             mt={{ base: "60px", md: "140px", lg: "200px" }}
             mb='50px'>
+
             <Text
               fontSize='4xl'
               lineHeight='39px'
@@ -65,6 +80,7 @@ function SignUp() {
               fontWeight='bold'>
               Welcome!
             </Text>
+
             <Text
               fontSize='md'
               color='white'
@@ -73,8 +89,11 @@ function SignUp() {
               w={{ base: "100%", md: "90%", lg: "90%", xl: "80%" }}>
               You are just one step behind to enter the world of NFTs
             </Text>
+
           </Flex>
+
           <GradientBorder p='2px' me={{ base: "none", lg: "30px", xl: "none" }}>
+
             <Flex
               background='transparent'
               borderRadius='30px'
@@ -86,7 +105,8 @@ function SignUp() {
               bg={{
                 base: "rgb(19,21,56)",
               }}>
-              <Text
+
+              {/* <Text
                 fontSize='xl'
                 color={textColor}
                 fontWeight='bold'
@@ -94,6 +114,7 @@ function SignUp() {
                 mb='22px'>
                 Register With
               </Text>
+              
               <HStack spacing='15px' justify='center' mb='22px'>
                 <GradientBorder borderRadius='15px'>
                   <Flex
@@ -162,6 +183,7 @@ function SignUp() {
                   </Flex>
                 </GradientBorder>
               </HStack>
+
               <Text
                 fontSize='lg'
                 color='gray.400'
@@ -169,8 +191,10 @@ function SignUp() {
                 textAlign='center'
                 mb='22px'>
                 or
-              </Text>
+              </Text> */}
+
               <FormControl>
+
                 <FormLabel
                   color={titleColor}
                   ms='4px'
@@ -200,6 +224,7 @@ function SignUp() {
                     placeholder='Your name'
                   />
                 </GradientBorder>
+
                 <FormLabel
                   color={titleColor}
                   ms='4px'
@@ -207,6 +232,7 @@ function SignUp() {
                   fontWeight='normal'>
                   Email
                 </FormLabel>
+
                 <GradientBorder
                   mb='24px'
                   h='50px'
@@ -228,6 +254,7 @@ function SignUp() {
                     placeholder='Your email address'
                   />
                 </GradientBorder>
+
                 <FormLabel
                   color={titleColor}
                   ms='4px'
@@ -235,6 +262,7 @@ function SignUp() {
                   fontWeight='normal'>
                   Password
                 </FormLabel>
+
                 <GradientBorder
                   mb='24px'
                   h='50px'
@@ -256,7 +284,8 @@ function SignUp() {
                     placeholder='Your password'
                   />
                 </GradientBorder>
-                <FormControl display='flex' alignItems='center' mb='24px'>
+
+                {/* <FormControl display='flex' alignItems='center' mb='24px'>
                   <DarkMode>
                     <Switch id='remember-login' colorScheme='brand' me='10px' />
                   </DarkMode>
@@ -268,10 +297,12 @@ function SignUp() {
                     fontWeight='normal'>
                     Remember me
                   </FormLabel>
-                </FormControl>
+                </FormControl> */}
+
+                
                 <Button
                   variant='brand'
-                  fontSize='10px'
+                  fontSize='15px'
                   type='submit'
                   w='100%'
                   maxW='350px'
@@ -280,7 +311,10 @@ function SignUp() {
                   mt='20px'>
                   SIGN UP
                 </Button>
+                
+
               </FormControl>
+
               <Flex
                 flexDirection='column'
                 justifyContent='center'
@@ -289,19 +323,13 @@ function SignUp() {
                 mt='0px'>
                 <Text color={textColor} fontWeight='medium'>
                   Already have an account?
-                  <Link 
-                    color={titleColor}
-                    as='span'
-                    ms='5px'
-                    href='#'
-                    fontWeight='bold'>
-                    Sign In
-                  </Link>
+                  {signInLink}
                 </Text>
               </Flex>
             </Flex>
           </GradientBorder>
         </Flex>
+
         <Box
           w={{ base: "335px", md: "450px" }}
           mx={{ base: "auto", lg: "unset" }}
@@ -309,6 +337,7 @@ function SignUp() {
           mb='90px'>
           <AuthFooter />
         </Box>
+        
         <Box
           display={{ base: "none", lg: "block" }}
           overflowX='hidden'
@@ -337,6 +366,7 @@ function SignUp() {
               fontWeight='500'>
               YOUR NEW ASSEST IS IN THE DIGITAL WORLD
             </Text>
+
             <Text
               textAlign='center'
               color='transparent'
@@ -347,10 +377,13 @@ function SignUp() {
               bg='linear-gradient(94.56deg, #FFFFFF 79.99%, #21242F 102.65%)'>
               - NFT
             </Text>
+
           </Box>
         </Box>
       </Flex>
     </Flex>
+
+
   );
 }
 

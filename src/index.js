@@ -1,5 +1,4 @@
 
-
 import React from "react";
 import ReactDOM from "react-dom";
 import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
@@ -13,7 +12,9 @@ ReactDOM.render(
     <Switch>
       <Route path={`/auth`} component={AuthLayout} />
       <Route path={`/admin`} component={AdminLayout} />
-      <Route path={`/rtl`} component={RTLLayout} />
+
+      {/* <Route path={`/rtl`} component={RTLLayout} /> */}
+
       <Redirect from={`/`} to='/auth/signin' />
     </Switch>
   </HashRouter>,
