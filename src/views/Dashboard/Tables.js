@@ -28,13 +28,14 @@ import {
   Th,
   Thead,
   Tr,
+  IconButton,
 } from "@chakra-ui/react";
 
 // Custom components
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-
+import SearchBar from "components/Navbars/SearchBar/SearchBar";
 // Table Components
 import TablesProjectRow from "components/Tables/TablesProjectRow";
 import TablesTableRow from "components/Tables/TablesTableRow";
@@ -48,8 +49,18 @@ import { AiFillCheckCircle } from "react-icons/ai";
 function Tables() {
   return (
     <Flex direction='column' pt={{ base: "120px", md: "75px" }}>
-      {/* Authors Table */}
+     
+
+      {/* Authors Table*/}
+      
       <Card overflowX={{ sm: "scroll", xl: "hidden" }} pb='0px'>
+             <SearchBar>
+              <IconButton onClick="filterBySearch()">
+                Search
+              </IconButton>
+
+     </SearchBar>
+
         <CardHeader p='6px 0px 22px 0px'>
           <Text fontSize='lg' color='#fff' fontWeight='bold'>
            TOP COLLECTIONS TABLE

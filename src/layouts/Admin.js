@@ -116,7 +116,7 @@ export default function Dashboard(props) {
     <ChakraProvider theme={theme} resetCss={false}>
       <Sidebar
         routes={routes}
-        logoText={"VISION UI FREE"}
+        logoText={"NFT WORLD"}
         display='none'
         sidebarVariant={sidebarVariant}
         {...rest}
