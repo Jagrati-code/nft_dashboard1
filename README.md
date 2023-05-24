@@ -1,8 +1,8 @@
 # [NFT Sales Analytics Dashboard- By ITTECTS]
 
-![version](https://img.shields.io/badge/version-1.0.0-blue.svg) [![GitHub issues open](0)
+![version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 
-![Product Gif](nft_readme.PNG)
+![Product Gif](src\assets\img\nft_readme.PNG)
 
 Imagine buying a piece of digital artwork on the Internet at a reasonable price and getting a unique digital token known which proves your authority over the artwork you bought. Wouldn't it be great? Well, that opportunity exists now, thanks to NFTs.
 
@@ -32,7 +32,7 @@ During the development of this dashboard, we have used many existing resources f
 - [NFT Sales Analytics Dashboard By- ITTECTS]
 - [Table of Contents](#table-of-contents)
 - [Versions](#versions)
-- [Quick start](#terminal commands)
+- [Quick start](#terminal-commands)
 - [Documentation](#documentation)
 - [File Structure](#file-structure)
 - [Browser Support](#browser-support)
