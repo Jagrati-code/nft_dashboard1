@@ -5,6 +5,7 @@ import { Flex, Link, List, ListItem, Text } from "@chakra-ui/react";
 
 export default function AuthFooter(props) {
   return (
+    
     <Flex
       flexDirection={{
         base: "column",
@@ -15,6 +16,7 @@ export default function AuthFooter(props) {
       justifyContent='space-between'
       pb='20px'
       fontSize='sm'>
+
       <Text
         color='white'
         textAlign={{
@@ -28,6 +30,39 @@ export default function AuthFooter(props) {
             : "Made by IT TECTS"}
         </Text>
       </Text>
+
+      <List display='flex'>
+        {/* <ListItem>
+         
+          <Link color='white' fontSize='sm' href='#'>
+            {document.documentElement.dir === "rtl" ? "IT TECTS" : "IT TECTS"}
+          </Link>
+        </ListItem> */}
+
+        {/* <ListItem
+          me={{
+            base: "20px",
+          }}>
+          <Link
+            color='white'
+            fontSize='sm'
+          
+            href='#blog'>
+            {document.documentElement.dir === "rtl" ? "Blog" : "Blog"}
+          </Link>
+        </ListItem> */}
+
+        {/* <ListItem>
+          <Link
+            color='white'
+            
+            href='#license'>
+            {document.documentElement.dir === "rtl" ? "License" : "License"}
+          </Link>
+        </ListItem> */}
+
+      </List>
+     
     </Flex>
   );
 }

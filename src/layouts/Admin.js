@@ -99,7 +99,9 @@ export default function Dashboard(props) {
     <ChakraProvider theme={theme} resetCss={false}>
       <Sidebar
         routes={routes}
-        logoText={"NFT WORLD"}
+
+        logoText={"NFT Dashboard"}
+
         display='none'
         sidebarVariant={sidebarVariant}
         {...rest}
