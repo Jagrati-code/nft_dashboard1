@@ -32,7 +32,7 @@ During the development of this dashboard, we have used many existing resources f
 - [NFT Sales Analytics Dashboard By- ITTECTS]
 - [Table of Contents](#table-of-contents)
 - [Versions](#versions)
-- [Quick start](#terminal commands)
+- [Quick start](#terminal-commands)
 - [Documentation](#documentation)
 - [File Structure](#file-structure)
 - [Browser Support](#browser-support)
