@@ -1,20 +1,3 @@
-/*!
-
-=========================================================
-* Vision UI Free Chakra - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/vision-ui-free-chakra
-* Copyright 2021 Creative Tim (https://www.creative-tim.com/)
-* Licensed under MIT (https://github.com/creativetimofficial/vision-ui-free-chakra/blob/master LICENSE.md)
-
-* Design and Coded by Simmmple & Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 
 import React from "react";
 
@@ -28,13 +11,14 @@ import {
   Th,
   Thead,
   Tr,
+  IconButton,
 } from "@chakra-ui/react";
 
 // Custom components
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-
+import SearchBar from "components/Navbars/SearchBar/SearchBar";
 // Table Components
 import TablesProjectRow from "components/Tables/TablesProjectRow";
 import TablesTableRow from "components/Tables/TablesTableRow";
@@ -48,8 +32,17 @@ import { AiFillCheckCircle } from "react-icons/ai";
 function Tables() {
   return (
     <Flex direction='column' pt={{ base: "120px", md: "75px" }}>
-      {/* Authors Table */}
+     
+
+      {/* Authors Table*/}
+      
       <Card overflowX={{ sm: "scroll", xl: "hidden" }} pb='0px'>
+             <SearchBar>
+              <IconButton>
+                Search
+              </IconButton>
+            </SearchBar>
+
         <CardHeader p='6px 0px 22px 0px'>
           <Text fontSize='lg' color='#fff' fontWeight='bold'>
            TOP COLLECTIONS TABLE
@@ -70,19 +63,19 @@ function Tables() {
                   color='gray.400'
                   fontFamily='Plus Jakarta Display'
                   borderBottomColor='#56577A'>
-                  Floor price
+                  OwnerID
                 </Th>
                 <Th
                   color='gray.400'
                   fontFamily='Plus Jakarta Display'
                   borderBottomColor='#56577A'>
-                  Owners
+                  CollectionID
                 </Th>
                 <Th
                   color='gray.400'
                   fontFamily='Plus Jakarta Display'
                   borderBottomColor='#56577A'>
-                  24HR change
+                  Date
                 </Th>
                 <Th borderBottomColor='#56577A'></Th>
               </Tr>
@@ -93,9 +86,9 @@ function Tables() {
                   <TablesTableRow
                     name={row.name}
                     logo={row.logo}
-                    email={row.email}
-                    subdomain={row.subdomain}
-                    domain={row.domain}
+                    category={row.category}
+                    collectionid={row.collectionid}
+                    ownerid={row.ownerid}
                     status={row.status}
                     date={row.date}
                     lastItem={index === arr.length - 1 ? true : false}
@@ -106,8 +99,8 @@ function Tables() {
           </Table>
         </CardBody>
       </Card>
-      {/* Projects Table */}
-      <Card my='22px' overflowX={{ sm: "scroll", xl: "hidden" }} pb='0px'>
+      Projects Table
+      {/* <Card my='22px' overflowX={{ sm: "scroll", xl: "hidden" }} pb='0px'>
         <CardHeader p='6px 0px 22px 0px'>
           <Flex direction='column'>
             <Text fontSize='lg' color='#fff' fontWeight='bold' mb='.5rem'>
@@ -178,7 +171,7 @@ function Tables() {
             </Tbody>
           </Table>
         </CardBody>
-      </Card>
+      </Card> */}
     </Flex>
   );
 }

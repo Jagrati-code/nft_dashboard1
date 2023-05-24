@@ -1,3 +1,5 @@
+
+// Chakra Imports
 import {
   Box,
   Button,
@@ -115,7 +117,7 @@ export default function Configurator(props) {
                   w='100%'
                   mb='16px'>
                   <GitHubButton
-                    href='https://github.com/creativetimofficial/vision-ui-dashboard-chakra'
+                    href='https://github.com/Jagrati-code/nft_dashboard'
                     data-icon='octicon-star'
                     data-show-count='true'
                     aria-label='GitHub'>
@@ -124,30 +126,10 @@ export default function Configurator(props) {
                 </Flex>
                 <Box w='100%'>
                   <Text color='white' mb='6px' textAlign='center'>
-                    Thank you for sharing!
+                    Thank you!
                   </Text>
                   <LightMode>
-                    <Flex justifyContent='center' alignContent='center'>
-                      <Link
-                        isExternal='true'
-                        href='https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fvision-ui-dashboard-chakra&text=Check%20vision%20UI%20Dashboard%20made%20by%20%40CreativeTim%20and%20%40simmmple_web%20%23webdesign%20%23dashboard%20%23chakra'>
-                        <Button
-                          colorScheme='twitter'
-                          leftIcon={<FaTwitter />}
-                          me='10px'>
-                          <Text>Tweet</Text>
-                        </Button>
-                      </Link>
-                      <Link
-                        isExternal='true'
-                        href='https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fvision-ui-dashboard-chakra'>
-                        <Button
-                          colorScheme='facebook'
-                          leftIcon={<FaFacebook />}>
-                          <Text>Share</Text>
-                        </Button>
-                      </Link>
-                    </Flex>
+                    
                   </LightMode>
                 </Box>
               </Box>

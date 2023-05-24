@@ -1,3 +1,4 @@
+
 /*eslint-disable*/
 import React from "react";
 import { Flex, Link, List, ListItem, Text } from "@chakra-ui/react";
@@ -28,10 +29,6 @@ export default function AuthFooter(props) {
             ? "Made by IT TECTS"
             : "Made by IT TECTS"}
         </Text>
-       
-        {document.documentElement.dir === "rtl"
-          ? ""
-          : ""}
       </Text>
 
       <List display='flex'>
@@ -65,7 +62,7 @@ export default function AuthFooter(props) {
         </ListItem> */}
 
       </List>
-      
+     
     </Flex>
   );
 }

@@ -1,20 +1,4 @@
-/*!
 
-=========================================================
-* Vision UI Free Chakra - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/vision-ui-free-chakra
-* Copyright 2021 Creative Tim (https://www.creative-tim.com/)
-* Licensed under MIT (https://github.com/creativetimofficial/vision-ui-free-chakra/blob/master LICENSE.md)
-
-* Design and Coded by Simmmple & Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 
 import {
   Avatar,
@@ -32,15 +16,15 @@ function TablesTableRow(props) {
   const {
     logo,
     name,
-    email,
-    subdomain,
-    domain,
+    category,
+    collectionid,
+    ownerid,
     status,
     date,
     lastItem,
   } = props;
-  const textColor = useColorModeValue("gray.700", "white");
-  const bgStatus = useColorModeValue("gray.400", "#1a202c");
+  //const textColor = useColorModeValue("gray.700", "white");
+  //const bgStatus = useColorModeValue("gray.400", "#1a202c");
   const colorStatus = useColorModeValue("white", "gray.400");
 
   return (
@@ -67,7 +51,7 @@ function TablesTableRow(props) {
               {name}
             </Text>
             <Text fontSize='sm' color='gray.400' fontWeight='normal'>
-              {email}
+              {category}
             </Text>
           </Flex>
         </Flex>
@@ -79,24 +63,15 @@ function TablesTableRow(props) {
         minW='150px'>
         <Flex direction='column'>
           <Text fontSize='sm' color='#fff' fontWeight='normal'>
-            {domain}
+            {ownerid}
           </Text>
-          <Text fontSize='sm' color='gray.400' fontWeight='normal'>
-            {subdomain}
-          </Text>
+          
         </Flex>
       </Td>
       <Td border={lastItem ? "none" : null} borderBottomColor='#56577A'>
-        <Badge
-          bg={status === "Online" ? "green.400" : "transparent"}
-          color={status === "Online" ? "white" : colorStatus}
-          fontSize='sm'
-          p='3px 10px'
-          borderRadius='8px'
-          border={status === "Online" ? "none" : "1px solid #fff"}
-          fontWeight='normal'>
-          {status}
-        </Badge>
+        <Text fontSize='sm' color='#fff' fontWeight='normal'>
+          {collectionid}
+        </Text>
       </Td>
       <Td border={lastItem ? "none" : null} borderBottomColor='#56577A'>
         <Text fontSize='sm' color='#fff' fontWeight='normal'>
