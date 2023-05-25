@@ -2,7 +2,7 @@
 
 ![version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 
-![Product Gif](src\assets\img\nft_readme.PNG)
+![Product Gif](https://drive.google.com/file/d/11aEwb43Fe79W0APz5KY_m7pw1P5jmxFu/view?usp=share_link)
 
 Imagine buying a piece of digital artwork on the Internet at a reasonable price and getting a unique digital token known which proves your authority over the artwork you bought. Wouldn't it be great? Well, that opportunity exists now, thanks to NFTs.
 
