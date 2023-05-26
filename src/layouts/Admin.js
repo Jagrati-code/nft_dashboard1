@@ -6,7 +6,7 @@ import Footer from "components/Footer/Footer.js";
 // Layout components
 import AdminNavbar from "components/Navbars/AdminNavbar.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import routes from "routes.js";
 // Custom Chakra theme
@@ -17,6 +17,8 @@ import MainPanel from "../components/Layout/MainPanel";
 import PanelContainer from "../components/Layout/PanelContainer";
 import PanelContent from "../components/Layout/PanelContent";
 
+import { useAuthContext } from "hooks/useAuthContext";
+
 export default function Dashboard(props) {
   const { ...rest } = props;
   // states and functions
@@ -25,6 +27,17 @@ export default function Dashboard(props) {
   // ref for main panel div
   const mainPanel = React.createRef();
   // functions for changing the states from components
+
+  const {user} = useAuthContext();
+
+  useEffect( () => {
+
+    if(!user){
+      // redirect to login page..
+      
+    }
+
+  }, [user]);
 
   const getRoute = () => {
     return window.location.pathname !== "/admin/full-screen-maps";
@@ -106,13 +119,12 @@ export default function Dashboard(props) {
   document.documentElement.dir = "ltr";
   // Chakra Color Mode
   return (
+
     <ChakraProvider theme={theme} resetCss={false}>
 
       <Sidebar
         routes={routes}
-
         logoText={"NFT Dashboard"}
-
         display='none'
         sidebarVariant={sidebarVariant}
         {...rest}
@@ -174,6 +186,7 @@ export default function Dashboard(props) {
         /> */}
 
       </MainPanel>
+
     </ChakraProvider>
   );
 }
