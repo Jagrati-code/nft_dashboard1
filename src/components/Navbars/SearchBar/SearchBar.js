@@ -1,7 +1,7 @@
 
 
 import React, {useState} from "react";
-//import { tablesTableData } from "variables/general";
+import { tablesTableData } from "variables/general";
 import {
   IconButton,
   Input,
@@ -16,7 +16,9 @@ export function SearchBar(props) {
   // Chakra Color Mode
   const searchIconColor = "white";
   const inputBg = "gray.800";
+  //const [searchInput, setSearchInput] = useState("");
 
+  
 
   return (
     <InputGroup bg={inputBg} borderRadius='15px' w='200px' marginLeft='1000px'>
@@ -43,13 +45,16 @@ export function SearchBar(props) {
       />
       
       <Input
+      type="search"
         fontSize='xs'
         py='11px'
-        placeholder='Type here...'
+        placeholder='Search...'
         borderRadius='inherit'
-        
+       // onChange={handleChange}
+   //value={searchInput}
         color={"white"}
       />
+      
     </InputGroup>
     
   );
