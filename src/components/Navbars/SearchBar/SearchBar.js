@@ -1,22 +1,7 @@
-/*!
 
-=========================================================
-* Vision UI Free Chakra - v1.0.0
-=========================================================
 
-* Product Page: https://www.creative-tim.com/product/vision-ui-free-chakra
-* Copyright 2021 Creative Tim (https://www.creative-tim.com/)
-* Licensed under MIT (https://github.com/creativetimofficial/vision-ui-free-chakra/blob/master LICENSE.md)
-
-* Design and Coded by Simmmple & Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-
-import React from "react";
+import React, {useState} from "react";
+//import { tablesTableData } from "variables/general";
 import {
   IconButton,
   Input,
@@ -29,10 +14,12 @@ export function SearchBar(props) {
   // Pass the computed styles into the `__css` prop
   const { variant, children, ...rest } = props;
   // Chakra Color Mode
-  const searchIconColor = "gray.700";
+  const searchIconColor = "white";
   const inputBg = "gray.800";
+
+
   return (
-    <InputGroup bg={inputBg} borderRadius='15px' w='200px'>
+    <InputGroup bg={inputBg} borderRadius='15px' w='200px' marginLeft='1000px'>
       <InputLeftElement
         children={
           <IconButton
@@ -50,14 +37,21 @@ export function SearchBar(props) {
             icon={
               <SearchIcon color={searchIconColor} w='15px' h='15px' />
             }></IconButton>
+            
         }
+        
       />
+      
       <Input
         fontSize='xs'
         py='11px'
         placeholder='Type here...'
         borderRadius='inherit'
+        
+        color={"white"}
       />
     </InputGroup>
+    
   );
-}
+};
+export default SearchBar;

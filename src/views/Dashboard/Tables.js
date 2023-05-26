@@ -1,20 +1,3 @@
-/*!
-
-=========================================================
-* Vision UI Free Chakra - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/vision-ui-free-chakra
-* Copyright 2021 Creative Tim (https://www.creative-tim.com/)
-* Licensed under MIT (https://github.com/creativetimofficial/vision-ui-free-chakra/blob/master LICENSE.md)
-
-* Design and Coded by Simmmple & Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 
 import React from "react";
 
@@ -28,13 +11,14 @@ import {
   Th,
   Thead,
   Tr,
+  IconButton,
 } from "@chakra-ui/react";
 
 // Custom components
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-
+import SearchBar from "components/Navbars/SearchBar/SearchBar";
 // Table Components
 import TablesProjectRow from "components/Tables/TablesProjectRow";
 import TablesTableRow from "components/Tables/TablesTableRow";
@@ -48,8 +32,17 @@ import { AiFillCheckCircle } from "react-icons/ai";
 function Tables() {
   return (
     <Flex direction='column' pt={{ base: "120px", md: "75px" }}>
-      {/* Authors Table */}
+     
+
+      {/* Authors Table*/}
+      
       <Card overflowX={{ sm: "scroll", xl: "hidden" }} pb='0px'>
+             <SearchBar>
+              <IconButton>
+                Search
+              </IconButton>
+            </SearchBar>
+
         <CardHeader p='6px 0px 22px 0px'>
           <Text fontSize='lg' color='#fff' fontWeight='bold'>
            TOP COLLECTIONS TABLE

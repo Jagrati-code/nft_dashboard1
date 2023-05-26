@@ -1,20 +1,3 @@
-/*!
-
-=========================================================
-* Vision UI Free Chakra - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/vision-ui-free-chakra
-* Copyright 2021 Creative Tim (https://www.creative-tim.com/)
-* Licensed under MIT (https://github.com/creativetimofficial/vision-ui-free-chakra/blob/master LICENSE.md)
-
-* Design and Coded by Simmmple & Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 
 // Chakra imports
 import { ChakraProvider, Portal, useDisclosure } from "@chakra-ui/react";
@@ -33,6 +16,7 @@ import FixedPlugin from "../components/FixedPlugin/FixedPlugin";
 import MainPanel from "../components/Layout/MainPanel";
 import PanelContainer from "../components/Layout/PanelContainer";
 import PanelContent from "../components/Layout/PanelContent";
+
 export default function Dashboard(props) {
   const { ...rest } = props;
   // states and functions
@@ -41,9 +25,11 @@ export default function Dashboard(props) {
   // ref for main panel div
   const mainPanel = React.createRef();
   // functions for changing the states from components
+
   const getRoute = () => {
     return window.location.pathname !== "/admin/full-screen-maps";
   };
+
   const getActiveRoute = (routes) => {
     let activeRoute = "Default Brand Text";
     for (let i = 0; i < routes.length; i++) {
@@ -67,10 +53,13 @@ export default function Dashboard(props) {
     }
     return activeRoute;
   };
+
   // This changes navbar state(fixed or not)
   const getActiveNavbar = (routes) => {
+
     let activeNavbar = false;
     for (let i = 0; i < routes.length; i++) {
+
       if (routes[i].category) {
         let categoryActiveNavbar = getActiveNavbar(routes[i].views);
         if (categoryActiveNavbar !== activeNavbar) {
@@ -88,7 +77,9 @@ export default function Dashboard(props) {
     }
     return activeNavbar;
   };
+
   const getRoutes = (routes) => {
+
     return routes.map((prop, key) => {
       if (prop.collapse) {
         return getRoutes(prop.views);
@@ -108,36 +99,47 @@ export default function Dashboard(props) {
         return null;
       }
     });
+    
   };
+
   const { isOpen, onOpen, onClose } = useDisclosure();
   document.documentElement.dir = "ltr";
   // Chakra Color Mode
   return (
     <ChakraProvider theme={theme} resetCss={false}>
+
       <Sidebar
         routes={routes}
+
         logoText={"NFT Dashboard"}
+
         display='none'
         sidebarVariant={sidebarVariant}
         {...rest}
       />
+
       <MainPanel
         ref={mainPanel}
         w={{
           base: "100%",
           xl: "calc(100% - 275px)",
         }}>
+
         <Portal>
+
           <AdminNavbar
             onOpen={onOpen}
-            logoText={"VISION UI FREE"}
+            logoText={"NFT Dashboard"}
             brandText={getActiveRoute(routes)}
             secondary={getActiveNavbar(routes)}
             fixed={fixed}
             {...rest}
           />
+
         </Portal>
+
         {getRoute() ? (
+
           <PanelContent>
             <PanelContainer>
               <Switch>
@@ -146,16 +148,20 @@ export default function Dashboard(props) {
               </Switch>
             </PanelContainer>
           </PanelContent>
+
         ) : null}
+
         <Footer />
-        <Portal>
+
+        {/* <Portal>
           <FixedPlugin
             secondary={getActiveNavbar(routes)}
             fixed={fixed}
             onOpen={onOpen}
           />
-        </Portal>
-        <Configurator
+        </Portal> */}
+
+        {/* <Configurator
           secondary={getActiveNavbar(routes)}
           isOpen={isOpen}
           onClose={onClose}
@@ -165,7 +171,8 @@ export default function Dashboard(props) {
           }}
           onOpaque={() => setSidebarVariant("opaque")}
           onTransparent={() => setSidebarVariant("transparent")}
-        />
+        /> */}
+
       </MainPanel>
     </ChakraProvider>
   );
