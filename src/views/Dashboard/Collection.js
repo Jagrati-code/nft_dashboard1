@@ -1,5 +1,5 @@
 
-import React from "react";
+import React,{useState} from "react";
 
 // Chakra imports
 import {
@@ -29,7 +29,10 @@ import { tablesProjectData, tablesTableData } from "variables/general";
 // Icons
 import { AiFillCheckCircle } from "react-icons/ai";
 
+
+
 function Tables() {
+  
   return (
     <Flex direction='column' pt={{ base: "120px", md: "75px" }}>
      
@@ -39,7 +42,7 @@ function Tables() {
       <Card overflowX={{ sm: "scroll", xl: "hidden" }} pb='0px'>
              <SearchBar>
               <IconButton>
-                Search
+    
               </IconButton>
             </SearchBar>
 
