@@ -27,6 +27,8 @@ import PropTypes from "prop-types";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import routes from "routes.js";
+import { useLogout } from "hooks/useLogout";
+import { useAuthContext } from "hooks/useAuthContext";
 
 export default function HeaderLinks(props) {
   const { variant, children, fixed, secondary, onOpen, ...rest } = props;
@@ -42,12 +44,22 @@ export default function HeaderLinks(props) {
     mainText = "white";
   }
   const settingsRef = React.useRef();
+
+  const { logout } = useLogout();
+  const {user} = useAuthContext();
+
+  const handleLogout = () => {
+    logout();
+  }
+
   return (
+
     <Flex
       pe={{ sm: "0px", md: "16px" }}
       w={{ sm: "100%", md: "auto" }}
       alignItems='center'
       flexDirection='row'>
+
       <InputGroup
         cursor='pointer'
         bg={inputBg}
@@ -58,6 +70,7 @@ export default function HeaderLinks(props) {
           md: "200px",
         }}
         me={{ sm: "auto", md: "20px" }}>
+
         <InputLeftElement
           children={
             <IconButton
@@ -77,6 +90,7 @@ export default function HeaderLinks(props) {
               }></IconButton>
           }
         />
+
         <Input
           fontSize='xs'
           py='11px'
@@ -84,8 +98,10 @@ export default function HeaderLinks(props) {
           placeholder='Type here...'
           borderRadius='inherit'
         />
+
       </InputGroup>
-      <NavLink to='/auth/signin'>
+
+      {/* <NavLink to='/auth/signin'>
         <Button
           ms='0px'
           px='0px'
@@ -108,7 +124,50 @@ export default function HeaderLinks(props) {
           }>
           <Text display={{ sm: "none", md: "flex" }}>Sign In</Text>
         </Button>
-      </NavLink>
+      </NavLink> */}
+
+      {user && (
+        <>
+          <Button
+            ms='0px'
+            px='0px'
+            me={{ sm: "2px", md: "16px" }}
+            color={navbarIcon}
+            variant='transparent-with-icon'
+            rightIcon={
+              document.documentElement.dir ? (
+                ""
+              ) : (
+                <ProfileIcon color={navbarIcon} w='22px' h='22px' me='0px' />
+              )
+            }
+            leftIcon={
+              document.documentElement.dir ? (
+                <ProfileIcon color={navbarIcon} w='22px' h='22px' me='0px' />
+              ) : (
+                ""
+              )
+            }
+
+            >
+            <Text display={{ sm: "none", md: "flex" }}>{user.email}</Text>
+          </Button>
+
+          <Button
+            ms='0px'
+            px='0px'
+            me={{ sm: "2px", md: "16px" }}
+            color={navbarIcon}
+            variant='transparent-with-icon'
+            onClick={handleLogout}
+            >
+            <Text display={{ sm: "none", md: "flex" }}>Log Out</Text>
+          </Button>
+        </>
+      )}
+
+
+
       <SidebarResponsive
         iconColor='gray.500'
         logoText={props.logoText}
@@ -117,7 +176,8 @@ export default function HeaderLinks(props) {
         // logo={logo}
         {...rest}
       />
-      <SettingsIcon
+
+      {/* <SettingsIcon
         cursor='pointer'
         ms={{ base: "16px", xl: "0px" }}
         me='16px'
@@ -126,8 +186,9 @@ export default function HeaderLinks(props) {
         color={navbarIcon}
         w='18px'
         h='18px'
-      />
-      <Menu>
+      /> */}
+
+      {/* <Menu>
         <MenuButton align='center'>
           <BellIcon color={navbarIcon} mt='-4px' w='18px' h='18px' />
         </MenuButton>
@@ -200,7 +261,8 @@ export default function HeaderLinks(props) {
             </MenuItem>
           </Flex>
         </MenuList>
-      </Menu>
+      </Menu> */}
+
     </Flex>
   );
 }
