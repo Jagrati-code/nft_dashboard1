@@ -19,6 +19,7 @@ import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import SearchBar from "components/Navbars/SearchBar/SearchBar";
+import App from "components/Navbars/Dropdown";
 // Table Components
 import TablesProjectRow from "components/Tables/TablesProjectRow";
 import TablesTableRow from "components/Tables/TablesTableRow";
@@ -40,6 +41,9 @@ function Tables() {
       {/* Authors Table*/}
       
       <Card overflowX={{ sm: "scroll", xl: "hidden" }} pb='0px'>
+        <App color="white">
+          Search
+        </App>
              <SearchBar>
               <IconButton>
     
