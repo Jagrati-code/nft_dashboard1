@@ -134,12 +134,12 @@ function Tables() {
 
               
 
-              {filteredCollections.map( (collection, index, arr) => {
+              {filteredCollections?.map( (collection, index, arr) => {
                 return (
                   <TablesTableRow
                     key={collection._id}
                     name={collection.Name}
-                    logo={collection.ImageUrl}
+                    ImageUrl={collection.ImageUrl}
                     category={collection.Category}
                     collectionid={collection.CollectionId}
                     ownerid={collection.OwnerId}

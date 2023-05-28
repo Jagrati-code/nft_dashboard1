@@ -60,7 +60,7 @@ export default function HeaderLinks(props) {
       alignItems='center'
       flexDirection='row'>
 
-      <InputGroup
+      {/* <InputGroup
         cursor='pointer'
         bg={inputBg}
         borderRadius='15px'
@@ -100,32 +100,9 @@ export default function HeaderLinks(props) {
           borderRadius='inherit'
         />
 
-      </InputGroup>
+      </InputGroup> */}
 
-      {/* <NavLink to='/auth/signin'>
-        <Button
-          ms='0px'
-          px='0px'
-          me={{ sm: "2px", md: "16px" }}
-          color={navbarIcon}
-          variant='transparent-with-icon'
-          rightIcon={
-            document.documentElement.dir ? (
-              ""
-            ) : (
-              <ProfileIcon color={navbarIcon} w='22px' h='22px' me='0px' />
-            )
-          }
-          leftIcon={
-            document.documentElement.dir ? (
-              <ProfileIcon color={navbarIcon} w='22px' h='22px' me='0px' />
-            ) : (
-              ""
-            )
-          }>
-          <Text display={{ sm: "none", md: "flex" }}>Sign In</Text>
-        </Button>
-      </NavLink> */}
+      
 
       {user && (
         <>
@@ -151,7 +128,7 @@ export default function HeaderLinks(props) {
             }
 
             >
-            <Text display={{ sm: "none", md: "flex" }}>{user.email}</Text>
+            <Text display={{ sm: "none", md: "flex" }}>{user.username}</Text>
           </Button>
 
           <Button
@@ -177,92 +154,6 @@ export default function HeaderLinks(props) {
         // logo={logo}
         {...rest}
       />
-
-      {/* <SettingsIcon
-        cursor='pointer'
-        ms={{ base: "16px", xl: "0px" }}
-        me='16px'
-        ref={settingsRef}
-        onClick={props.onOpen}
-        color={navbarIcon}
-        w='18px'
-        h='18px'
-      /> */}
-
-      {/* <Menu>
-        <MenuButton align='center'>
-          <BellIcon color={navbarIcon} mt='-4px' w='18px' h='18px' />
-        </MenuButton>
-
-        <MenuList
-          border='transparent'
-          backdropFilter='blur(63px)'
-          bg='linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.69) 76.65%)'
-          borderRadius='20px'>
-          <Flex flexDirection='column'>
-            <MenuItem
-              borderRadius='8px'
-              _hover={{
-                bg: "transparent",
-              }}
-              _active={{
-                bg: "transparent",
-              }}
-              _focus={{
-                bg: "transparent",
-              }}
-              mb='10px'>
-              <ItemContent
-                time='13 minutes ago'
-                info='from Alicia'
-                boldInfo='New Message'
-                aName='Alicia'
-                aSrc={avatar1}
-              />
-            </MenuItem>
-            <MenuItem
-              borderRadius='8px'
-              _hover={{
-                bg: "transparent",
-              }}
-              _active={{
-                bg: "transparent",
-              }}
-              _focus={{
-                bg: "transparent",
-              }}
-            
-              mb='10px'>
-              <ItemContent
-                time='2 days ago'
-                info='by Josh Henry'
-                boldInfo='New Album'
-                aName='Josh Henry'
-                aSrc={avatar2}
-              />
-            </MenuItem>
-            <MenuItem
-              borderRadius='8px'
-              _hover={{
-                bg: "transparent",
-              }}
-              _active={{
-                bg: "transparent",
-              }}
-              _focus={{
-                bg: "transparent",
-              }}>
-              <ItemContent
-                time='3 days ago'
-                info='Payment succesfully completed!'
-                boldInfo=''
-                aName='Kara'
-                aSrc={avatar3}
-              />
-            </MenuItem>
-          </Flex>
-        </MenuList>
-      </Menu> */}
 
     </Flex>
   );

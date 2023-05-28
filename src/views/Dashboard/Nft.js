@@ -69,7 +69,8 @@ function Nft() {
     if(search === "")
       setFilteredNfts(nfts);
     else{
-      const data = nfts.filter( nft => nft.name.toLowerCase().includes(search.toLowerCase()) );
+      const data = nfts.filter( nft => nft.Name.toLowerCase().includes(search.toLowerCase()) 
+        || nft.Category.toLowerCase().includes(search.toLowerCase()) );
       setFilteredNfts(data);
     }
   }
@@ -137,6 +138,12 @@ function Nft() {
                   color='gray.400'
                   fontFamily='Plus Jakarta Display'
                   borderBottomColor='#56577A'>
+                  Category
+                </Th>
+                <Th
+                  color='gray.400'
+                  fontFamily='Plus Jakarta Display'
+                  borderBottomColor='#56577A'>
                   Floor Value
                 </Th>
                 <Th
@@ -161,23 +168,34 @@ function Nft() {
                   color='gray.400'
                   fontFamily='Plus Jakarta Display'
                   borderBottomColor='#56577A'>
+                  Created Date
+                </Th>
+                <Th
+                  color='gray.400'
+                  fontFamily='Plus Jakarta Display'
+                  borderBottomColor='#56577A'>
                   No. Of Transactions
                 </Th>
               </Tr>
             </Thead>
+
             <Tbody>
-              {filteredNfts.map((nft, index, arr) => {
+              {filteredNfts?.map((nft, index, arr) => {
                 return (
                   <TablesProjectRow
-                    name={nft.name}
-                    logo={nft.imageurl}
-                    value={nft.floorvalue}
-                    nftid={nft.nftid}
-                    ownerid={nft.ownerid}
-                    ownerName=""
-                    collectionid={nft.collectionid}
+                    key={nft._id}
+                    category={nft.Category}
+                    collectionid={nft.CollectionId}
+                    date={nft.CreatedDate}
+                    description={nft.Description}
+                    value={nft.FloorValue}
+                    name={nft.Name}
+                    logo={nft.ImageUrl}
+                    nftid={nft.NftId}
+                    ownerid={nft.OwnerId}
+                    ownerName={nft.OwnerName}
                     collectionName=""
-                    nooftransactions={nft.nooftransactions}
+                    nooftransactions={nft.NoOfTransactions}
                     rarity={nft.Rarity}
                   />
                 );

@@ -18,8 +18,9 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 
 // Table Components
-import TablesProjectRow from "components/Tables/TablesProjectRow";
-import TablesTableRow from "components/Tables/TablesTableRow";
+import TablesProjectRow from "components/Tables/TablesProjectRow.js";
+
+import TablesTableRow from "components/Tables/TablesTableRow.js";
 
 // Data
 import { tablesProjectData, tablesTableData } from "variables/general";

@@ -18,7 +18,7 @@ import MainPanel from "../components/Layout/MainPanel";
 import PanelContainer from "../components/Layout/PanelContainer";
 import PanelContent from "../components/Layout/PanelContent";
 
-import { useAuthContext } from "hooks/useAuthContext";
+import { useHistory } from 'react-router-dom';
 
 export default function Dashboard(props) {
 
@@ -31,17 +31,17 @@ export default function Dashboard(props) {
   // ref for main panel div
   const mainPanel = React.createRef();
 
-
-  const {user} = useAuthContext();
+  const history = useHistory();
 
   useEffect( () => {
 
+    const user = JSON.parse(localStorage.getItem('user'));
     if(!user){
       // redirect to login page..
-      
+      history.push('/auth');
     }
 
-  }, [user]);
+  }, []);
 
   const getRoute = () => {
     return window.location.pathname !== "/admin/full-screen-maps";

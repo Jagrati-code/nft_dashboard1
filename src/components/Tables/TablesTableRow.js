@@ -1,16 +1,18 @@
 import { Avatar, Badge, Button, Flex, Td, Text, Tr, useColorModeValue } from "@chakra-ui/react";
-import React from "react";
-import image from "../../assets/images/Collection/AtemCard.png"
+import React, { useState } from "react";
+
+import DynamicImports from "components/DynamicImports.mjs";
 
 function TablesTableRow(props) {
 
-  const { logo, name, category, collectionid, ownerid, ownerName, communitysize, date, description, lastItem } = props;
+  const { ImageUrl, name, category, collectionid, ownerid, ownerName, communitysize, date, description, lastItem } = props;
+  const [module, setModule] = useState("");
 
-  // console.log(logo);
-  // const imageurl = `../../assets${logo}`;
-  // console.log(imageurl)
-
-  // const image = require("../../assets/images/Collection/AtemCard.png");
+  DynamicImports(ImageUrl)
+  .then( mod => {
+    console.log(mod);
+    setModule(mod);
+  })
 
   //const textColor = useColorModeValue("gray.700", "white");
   //const bgStatus = useColorModeValue("gray.400", "#1a202c");
@@ -23,16 +25,15 @@ function TablesTableRow(props) {
 
       <Td minWidth={{ sm: "250px" }} ps='0px' border={lastItem ? "none" : null} borderBottomColor='#56577A'>
         <Flex align='center' py='.8rem' minWidth='100%' flexWrap='nowrap'>
+ 
           <Avatar
-            src= {image}
+            src={module}
             w='50px'
             borderRadius='12px'
             me='18px'
             border='none'
-          />
+          /> 
 
-          {/* <img src={image} alt="Image" /> */}
-          
           <Flex direction='column'>
             <Text
               fontSize='sm'
@@ -45,6 +46,7 @@ function TablesTableRow(props) {
               {category}
             </Text>
           </Flex>
+          
         </Flex>
       </Td>
 
