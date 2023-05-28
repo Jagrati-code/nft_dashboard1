@@ -1,6 +1,8 @@
 import * as React from 'react';
 import './App.css';
+
 const App = () => {
+
     const handleMenuOne = () => {
       console.log('clicked one');
     };
@@ -10,6 +12,7 @@ const App = () => {
     };
   
     return (
+
       <Dropdown
         trigger={<button color="white">Filters</button>}
         menu={[
@@ -17,10 +20,12 @@ const App = () => {
           <button border-bottom-left-radius="10px" border-bottom-right-radius="10px" onClick={handleMenuTwo}>Category</button>,
         ]}
       />
+
     );
   };
   
   const Dropdown = ({ trigger, menu }) => {
+
     const [open, setOpen] = React.useState(false);
   
     const handleOpen = () => {
@@ -28,11 +33,15 @@ const App = () => {
     };
   
     return (
+
       <div className="dropdown">
+
         {React.cloneElement(trigger, {
           onClick: handleOpen,
         })}
+
         {open ? (
+          
           <ul className="menu">
             {menu.map((menuItem, index) => (
               <li key={index} className="menu-item">
@@ -45,6 +54,7 @@ const App = () => {
               </li>
             ))}
           </ul>
+
         ) : null}
       </div>
     );

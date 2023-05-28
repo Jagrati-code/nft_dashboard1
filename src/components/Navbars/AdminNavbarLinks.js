@@ -72,6 +72,7 @@ export default function HeaderLinks(props) {
         me={{ sm: "auto", md: "20px" }}>
 
         <InputLeftElement
+
           children={
             <IconButton
               bg='inherit'

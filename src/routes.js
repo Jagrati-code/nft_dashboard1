@@ -1,6 +1,3 @@
-
-
-// import
 import Dashboard from "views/Dashboard/Dashboard.js";
 import Tables from "views/Dashboard/Collection.js";
 import Billing from "views/Dashboard/Billing.js";
@@ -21,6 +18,7 @@ import {
 } from "components/Icons/Icons";
 
 var dashRoutes = [
+
   {
     path: "/dashboard",
     name: "Dashboard",
@@ -28,47 +26,54 @@ var dashRoutes = [
     component: Dashboard,
     layout: "/admin",
   },
+
   {
-    path: "/collection",
-    name: "Collection",
+    path: "/collections",
+    name: "Collections",
     icon: <StatsIcon color='inherit' />,
     component: Tables,
     layout: "/admin",
   },
+
+  // {
+  //   path: "/billing",
+  //   name: "Billing",
+  //   icon: <CreditIcon color='inherit' />,
+  //   component: Billing,
+  //   layout: "/admin",
+  // },
+
   {
-    path: "/billing",
-    name: "Billing",
-    icon: <CreditIcon color='inherit' />,
-    component: Billing,
-    layout: "/admin",
-  },
-  {
-    path: "/nft",
-    name: "Nft",
+    path: "/nfts",
+    name: "NFTs",
     icon: <CreditIcon color='inherit' />,
     component: Nft,
     layout: "/admin",
   },
-  {
-    path: "/rtl-support-page",
-    name: "RTL",
-    icon: <SupportIcon color='inherit' />,
-    component: RTLPage,
-    layout: "/rtl",
-  },
+  // {
+  //   path: "/rtl-support-page",
+  //   name: "RTL",
+  //   icon: <SupportIcon color='inherit' />,
+  //   component: RTLPage,
+  //   layout: "/rtl",
+  // },
+
   {
     name: "ACCOUNT PAGES",
     category: "account",
     state: "pageCollapse",
+
     views: [
-      {
-        path: "/profile",
-        name: "Profile",
-        icon: <PersonIcon color='inherit' />,
-        secondaryNavbar: true,
-        component: Profile,
-        layout: "/admin",
-      },
+
+      // {
+      //   path: "/profile",
+      //   name: "Profile",
+      //   icon: <PersonIcon color='inherit' />,
+      //   secondaryNavbar: true,
+      //   component: Profile,
+      //   layout: "/admin",
+      // },
+
       {
         path: "/signin",
         name: "Sign In",
@@ -76,6 +81,7 @@ var dashRoutes = [
         component: SignIn,
         layout: "/auth",
       },
+
       {
         path: "/signup",
         name: "Sign Up",
@@ -84,6 +90,7 @@ var dashRoutes = [
         component: SignUp,
         layout: "/auth",
       },
+
     ],
   },
 ];
