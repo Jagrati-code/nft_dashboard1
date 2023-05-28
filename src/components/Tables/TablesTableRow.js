@@ -2,6 +2,7 @@
 
 import {
   Avatar,
+  Link,
   Badge,
   Button,
   Flex,
@@ -11,6 +12,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
+import Collectionpage from "pages/Collectionpage";
+//import { pageRoutes } from "routes";
 
 function TablesTableRow(props) {
   const {
@@ -23,6 +26,8 @@ function TablesTableRow(props) {
     date,
     lastItem,
   } = props;
+  const titleColor = "white";
+  const textColor = "gray.400";
   //const textColor = useColorModeValue("gray.700", "white");
   //const bgStatus = useColorModeValue("gray.400", "#1a202c");
   const colorStatus = useColorModeValue("white", "gray.400");
@@ -79,15 +84,14 @@ function TablesTableRow(props) {
         </Text>
       </Td>
       <Td border={lastItem ? "none" : null} borderBottomColor='#56577A'>
-        <Button p='0px' bg='transparent' variant='no-hover'>
-          <Text
-            fontSize='sm'
-            color='gray.400'
-            fontWeight='bold'
-            cursor='pointer'>
-            Edit
-          </Text>
-        </Button>
+      <Flex flexDirection='column' justifyContent='center' alignItems='center' maxW='100%' mt='0px'>
+              <Text color={textColor} fontWeight='medium'>
+                
+                <Link color={titleColor} href={`${process.env.PUBLIC_URL}/#/admin/nft`} ms='5px' fontWeight='bold'> 
+                  View
+                </Link>
+              </Text>
+            </Flex>
       </Td>
     </Tr>
   );
