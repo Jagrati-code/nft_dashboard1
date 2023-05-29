@@ -1,5 +1,5 @@
 // Chakra Icons
-import { BellIcon, SearchIcon } from "@chakra-ui/icons";
+import { BellIcon, SearchIcon , Icon} from "@chakra-ui/icons";
 // Chakra Imports
 import {
   Button,
@@ -29,6 +29,7 @@ import { NavLink } from "react-router-dom";
 import routes from "routes.js";
 import { useLogout } from "hooks/useLogout";
 import { useAuthContext } from "hooks/useAuthContext";
+import { FiLogOut } from 'react-icons/fi';
 
 export default function HeaderLinks(props) {
   const { variant, children, fixed, secondary, onOpen, ...rest } = props;
@@ -139,7 +140,7 @@ export default function HeaderLinks(props) {
             variant='transparent-with-icon'
             onClick={handleLogout}
             >
-            <Text display={{ sm: "none", md: "flex" }}>Log Out</Text>
+            <Icon as={FiLogOut} boxSize={6} />
           </Button>
         </>
       )}
