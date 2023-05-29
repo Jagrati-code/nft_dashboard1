@@ -2,13 +2,15 @@
 
 // import
 import Dashboard from "views/Dashboard/Dashboard.js";
-import Tables from "views/Dashboard/Tables.js";
+import Tables from "views/Dashboard/Collection.js";
 import Billing from "views/Dashboard/Billing.js";
 import RTLPage from "views/RTL/RTLPage.js";
 import Profile from "views/Dashboard/Profile.js";
 import SignIn from "views/Pages/SignIn.js";
 import SignUp from "views/Pages/SignUp.js";
 import Nft from "views/Dashboard/Nft.js";
+import Collectionpage from "pages/Collectionpage";
+//import nft_page from "pages/nft_page";
 
 import {
   HomeIcon,
@@ -29,8 +31,8 @@ var dashRoutes = [
     layout: "/admin",
   },
   {
-    path: "/tables",
-    name: "Tables",
+    path: "/collection",
+    name: "Collection",
     icon: <StatsIcon color='inherit' />,
     component: Tables,
     layout: "/admin",
@@ -49,6 +51,7 @@ var dashRoutes = [
     component: Nft,
     layout: "/admin",
   },
+  
   {
     path: "/rtl-support-page",
     name: "RTL",
@@ -56,6 +59,7 @@ var dashRoutes = [
     component: RTLPage,
     layout: "/rtl",
   },
+  
   {
     name: "ACCOUNT PAGES",
     category: "account",
@@ -87,4 +91,5 @@ var dashRoutes = [
     ],
   },
 ];
+
 export default dashRoutes;
