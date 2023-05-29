@@ -51,9 +51,14 @@ import {
 import { dashboardTableData, timelineData } from 'variables/general';
 
 export default function Dashboard() {
+
 	return (
+
 		<Flex flexDirection='column' pt={{ base: '120px', md: '75px' }}>
+
 			<SimpleGrid columns={{ sm: 1, md: 2, xl: 4 }} spacing='24px'>
+
+
 				{/* MiniStatistics Card */}
 				<Card>
 					<CardBody>
@@ -84,6 +89,7 @@ export default function Dashboard() {
 						</Flex>
 					</CardBody>
 				</Card>
+
 				{/* MiniStatistics Card */}
 				<Card minH='83px'>
 					<CardBody>
@@ -114,6 +120,7 @@ export default function Dashboard() {
 						</Flex>
 					</CardBody>
 				</Card>
+
 				{/* MiniStatistics Card */}
 				<Card>
 					<CardBody>
@@ -145,6 +152,7 @@ export default function Dashboard() {
 						</Flex>
 					</CardBody>
 				</Card>
+
 				{/* MiniStatistics Card */}
 				<Card>
 					<CardBody>
@@ -175,7 +183,9 @@ export default function Dashboard() {
 						</Flex>
 					</CardBody>
 				</Card>
+
 			</SimpleGrid>
+
 			<Grid templateColumns={{ sm: '1fr', md: '1fr 1fr', '2xl': '2fr 1.2fr 1.5fr' }} my='26px' gap='18px'>
 				{/* Welcome Card */}
 				<Card
@@ -361,6 +371,7 @@ export default function Dashboard() {
 					</Flex>
 				</Card>
 			</Grid>
+
 			<Grid
 				templateColumns={{ sm: '1fr', lg: '1.7fr 1.3fr' }}
 				maxW={{ sm: '100%', md: '100%' }}
@@ -498,6 +509,7 @@ export default function Dashboard() {
 					</CardBody>
 				</Card>
 			</Grid>
+
 			<Grid templateColumns={{ sm: '1fr', md: '1fr 1fr', lg: '2fr 1fr' }} gap='24px'>
 				{/* Projects */}
 				<Card p='16px' overflowX={{ sm: 'scroll', xl: 'hidden' }}>
@@ -590,6 +602,7 @@ export default function Dashboard() {
 					</CardBody>
 				</Card>
 			</Grid>
+			
 		</Flex>
 	);
 }

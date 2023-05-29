@@ -19,9 +19,12 @@ import {
 // Assets
 import signInImage from "assets/img/signInImage.png";
 
+
 // Custom Components
 import AuthFooter from "components/Footer/AuthFooter";
 import GradientBorder from "components/GradientBorder/GradientBorder";
+import { useLogin } from "hooks/useLogin";
+
 
 function SignIn() {
 
@@ -39,34 +42,18 @@ function SignIn() {
     setPassword(e.target.value);
   }
 
-  const handleSignIn = async () => {
+  const {login, error, isLoading} = useLogin();
 
-    console.log("Email : ", email , " Password: ", password);
+  
 
-    try {
 
-      const response = await fetch('/api/auth/login', {
+  const handleSignIn = async (e) => {
 
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: {
-          "email" : email,
-          "password" : password
-        },
+    e.preventDefault();
 
-      });
+    // console.log("Email : ", email , " Password: ", password);
 
-      const result = await response.json();
-      console.log(result); // Handle the response data
-
-      // Reset the form
-
-     
-    } catch (error) {
-      console.error('Error:', error);
-    }
+    await login(email,password);
 
   }
 
@@ -115,6 +102,18 @@ function SignIn() {
               Enter your email and password to sign in
             </Text>
 
+            {
+              error &&
+              <Text
+                color="red"
+                ms='6px'
+                fontSize='sm'
+                fontWeight='normal'
+                textAlign="center">
+                  * {error}
+              </Text>
+            }
+
             <FormControl>
 
               <FormLabel
@@ -154,6 +153,7 @@ function SignIn() {
                 color='white'>
                 Password
               </FormLabel>
+              
               <GradientBorder
                 mb='24px'
                 w={{ base: "100%", lg: "fit-content" }}
@@ -174,20 +174,6 @@ function SignIn() {
               </GradientBorder>
             </FormControl>
 
-            {/* <FormControl display='flex' alignItems='center'>
-              <DarkMode>
-                <Switch id='remember-login' colorScheme='brand' me='10px' />
-              </DarkMode>
-              <FormLabel
-                htmlFor='remember-login'
-                mb='0'
-                ms='1'
-                fontWeight='normal'
-                color='white'>
-                Remember me
-              </FormLabel>
-            </FormControl> */}
-
             <Button
               variant='brand'
               fontSize='15px'
@@ -198,6 +184,7 @@ function SignIn() {
               mb='20px'
               mt='20px'
               onClick={handleSignIn}
+              disabled = {isLoading}
               >
               SIGN IN
             </Button>

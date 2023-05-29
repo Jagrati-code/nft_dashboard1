@@ -25,11 +25,19 @@ import GradientBorder from "components/GradientBorder/GradientBorder";
 
 // Assets
 import signUpImage from "assets/img/signUpImage.png";
+import { useState } from "react";
+import { useSignup } from "hooks/useSignup";
 
 function SignUp() {
 
   const titleColor = "white";
   const textColor = "gray.400";
+
+  const [username, setUsername] = useState("");
+  const [email,setEmail] = useState("");
+  const [password,setPassword] = useState("");
+
+  const {signup, error, isLoading} = useSignup();
 
   var signInLink = (
     <Link 
@@ -40,6 +48,16 @@ function SignUp() {
       Sign In
     </Link>
   );
+
+  const handleSignUp = async (e) => {
+
+    e.preventDefault();
+
+    console.log("Username : ", username, "Email : ", email , " Password: ", password);
+
+    await signup(username, email, password);
+
+  }
 
   return (
    
@@ -106,92 +124,17 @@ function SignUp() {
                 base: "rgb(19,21,56)",
               }}>
 
-              {/* <Text
-                fontSize='xl'
-                color={textColor}
-                fontWeight='bold'
-                textAlign='center'
-                mb='22px'>
-                Register With
-              </Text>
-              
-              <HStack spacing='15px' justify='center' mb='22px'>
-                <GradientBorder borderRadius='15px'>
-                  <Flex
-                    _hover={{ filter: "brightness(120%)" }}
-                    transition='all .25s ease'
-                    cursor='pointer'
-                    justify='center'
-                    align='center'
-                    bg='rgb(19,21,54)'
-                    w='71px'
-                    h='71px'
-                    borderRadius='15px'>
-                    <Link href='#'>
-                      <Icon
-                        color={titleColor}
-                        as={FaFacebook}
-                        w='30px'
-                        h='30px'
-                        _hover={{ filter: "brightness(120%)" }}
-                      />
-                    </Link>
-                  </Flex>
-                </GradientBorder>
-                <GradientBorder borderRadius='15px'>
-                  <Flex
-                    _hover={{ filter: "brightness(120%)" }}
-                    transition='all .25s ease'
-                    cursor='pointer'
-                    justify='center'
-                    align='center'
-                    bg='rgb(19,21,54)'
-                    w='71px'
-                    h='71px'
-                    borderRadius='15px'>
-                    <Link href='#'>
-                      <Icon
-                        color={titleColor}
-                        as={FaApple}
-                        w='30px'
-                        h='30px'
-                        _hover={{ filter: "brightness(120%)" }}
-                      />
-                    </Link>
-                  </Flex>
-                </GradientBorder>
-                <GradientBorder borderRadius='15px'>
-                  <Flex
-                    _hover={{ filter: "brightness(120%)" }}
-                    transition='all .25s ease'
-                    cursor='pointer'
-                    justify='center'
-                    align='center'
-                    bg='rgb(19,21,54)'
-                    w='71px'
-                    h='71px'
-                    borderRadius='15px'>
-                    <Link href='#'>
-                      <Icon
-                        color={titleColor}
-                        as={FaGoogle}
-                        w='30px'
-                        h='30px'
-                        _hover={{ filter: "brightness(120%)" }}
-                      />
-                    </Link>
-                  </Flex>
-                </GradientBorder>
-              </HStack>
-
-              <Text
-                fontSize='lg'
-                color='gray.400'
-                fontWeight='bold'
-                textAlign='center'
-                mb='22px'>
-                or
-              </Text> */}
+                {
+                  error &&
+                  <Text
+                    color="red"
+                    ms='6px'
+                    fontSize='sm'
+                    fontWeight='normal'
+                    textAlign="center">
+                      * {error}
+                  </Text>
+                }
 
               <FormControl>
 
@@ -222,6 +165,7 @@ function SignUp() {
                     h='46px'
                     type='text'
                     placeholder='Your name'
+                    onChange={(e) => setUsername(e.target.value)}
                   />
                 </GradientBorder>
 
@@ -252,6 +196,7 @@ function SignUp() {
                     h='46px'
                     type='email'
                     placeholder='Your email address'
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </GradientBorder>
 
@@ -282,24 +227,10 @@ function SignUp() {
                     h='46px'
                     type='password'
                     placeholder='Your password'
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </GradientBorder>
 
-                {/* <FormControl display='flex' alignItems='center' mb='24px'>
-                  <DarkMode>
-                    <Switch id='remember-login' colorScheme='brand' me='10px' />
-                  </DarkMode>
-
-                  <FormLabel
-                    color={titleColor}
-                    htmlFor='remember-login'
-                    mb='0'
-                    fontWeight='normal'>
-                    Remember me
-                  </FormLabel>
-                </FormControl> */}
-
-                
                 <Button
                   variant='brand'
                   fontSize='15px'
@@ -308,7 +239,10 @@ function SignUp() {
                   maxW='350px'
                   h='45'
                   mb='20px'
-                  mt='20px'>
+                  mt='20px'
+                  onClick={handleSignUp}
+                  disabled={isLoading}
+                >
                   SIGN UP
                 </Button>
                 
