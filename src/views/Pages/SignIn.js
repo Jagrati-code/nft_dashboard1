@@ -19,10 +19,12 @@ import {
 // Assets
 import signInImage from "assets/img/signInImage.png";
 
+
 // Custom Components
 import AuthFooter from "components/Footer/AuthFooter";
 import GradientBorder from "components/GradientBorder/GradientBorder";
 import { useLogin } from "hooks/useLogin";
+
 
 function SignIn() {
 
@@ -42,11 +44,14 @@ function SignIn() {
 
   const {login, error, isLoading} = useLogin();
 
+  
+
+
   const handleSignIn = async (e) => {
 
     e.preventDefault();
 
-    console.log("Email : ", email , " Password: ", password);
+    // console.log("Email : ", email , " Password: ", password);
 
     await login(email,password);
 

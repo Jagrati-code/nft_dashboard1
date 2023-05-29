@@ -8,6 +8,7 @@ import avatar7 from "assets/img/avatars/avatar7.png";
 import avatar8 from "assets/img/avatars/avatar8.png";
 import avatar9 from "assets/img/avatars/avatar9.png";
 import avatar10 from "assets/img/avatars/avatar10.png";
+
 // Custom icons
 import {
   AdobexdLogo,
@@ -17,7 +18,9 @@ import {
   SlackLogo,
   SpotifyLogo,
 } from "components/Icons/Icons.js";
+
 import { AiOutlineExclamation } from "react-icons/ai";
+
 import {
   FaArrowDown,
   FaArrowUp,
@@ -27,6 +30,7 @@ import {
   FaHtml5,
   FaShoppingCart,
 } from "react-icons/fa";
+
 import { SiDropbox } from "react-icons/si";
 
 export const dashboardTableData = [
@@ -111,6 +115,7 @@ export const timelineData = [
     date: "80 ETH",
   },
 ];
+
 export const rtlDashboardTableData = [
   {
     logo: AdobexdLogo,

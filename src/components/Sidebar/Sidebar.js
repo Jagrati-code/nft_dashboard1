@@ -1,5 +1,6 @@
 /*eslint-disable*/
 import { HamburgerIcon } from "@chakra-ui/icons";
+
 // chakra imports
 import {
   Box,
@@ -15,6 +16,7 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
+
 import IconBox from "components/Icons/IconBox";
 import { SimmmpleLogoWhite } from "components/Icons/Icons";
 import { Separator } from "components/Separator/Separator";
@@ -75,9 +77,13 @@ function Sidebar(props) {
           </>
         );
       }
+
       return (
+
         <NavLink to={prop.layout + prop.path}>
+
           {activeRoute(prop.layout + prop.path) === "active" ? (
+
             <Button
               boxSize='initial'
               justifyContent='flex-start'
@@ -183,6 +189,7 @@ function Sidebar(props) {
       );
     });
   };
+  
   const { logoText, routes, sidebarVariant } = props;
 
   var links = <>{createLinks(routes)}</>;
