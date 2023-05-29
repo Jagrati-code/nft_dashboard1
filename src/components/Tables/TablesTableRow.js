@@ -1,6 +1,21 @@
 import { Avatar, Badge, Button, Flex, Td, Text, Tr, useColorModeValue } from "@chakra-ui/react";
 import React, { useState } from "react";
 
+
+import {
+  Avatar,
+  Link,
+  Badge,
+  Button,
+  Flex,
+  Td,
+  Text,
+  Tr,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import React from "react";
+import Collectionpage from "pages/Collectionpage";
+//import { pageRoutes } from "routes";
 import DynamicImports from "components/DynamicImports.mjs";
 
 function TablesTableRow(props) {

@@ -173,7 +173,7 @@ export default function Dashboard(props) {
 
           <AdminNavbar
             onOpen={onOpen}
-            logoText={"NFT Dashboard"}
+            logoText={"NFT DASHBOARD"}
             brandText={getActiveRoute(routes)}
             secondary={getActiveNavbar(routes)}
             fixed={fixed}

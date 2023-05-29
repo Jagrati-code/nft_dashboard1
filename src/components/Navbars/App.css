@@ -5,10 +5,13 @@
     height: 37px;
     border: 1px solid white;
     color:aliceblue;
+    font-size: small;
+    padding-left: 30px;
+    padding-top: 8px;
   }
   
   .menu {
-    position: absolute;
+    position: relative;
   
     list-style-type: none;
     margin: 5px 0px;

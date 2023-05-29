@@ -1,3 +1,4 @@
+import { tablesProjectData } from "variables/general";
 export const barChartDataDashboard = [
   {
     name: "Current Value",
@@ -168,6 +169,142 @@ export const lineChartOptionsDashboard = {
   },
   colors: ["#2CD9FF", "#582CFF"],
 };
+
+export const barChartDataDashboard2 = [
+  {
+    name: "NO. of owners",
+    data: tablesProjectData.map((tablesProjectData) => tablesProjectData.owner),
+  }
+]
+
+export const lineChartDataDashboard2 = [
+  {
+    name: "NO. of owners",
+    data: tablesProjectData.map((tablesProjectData) => tablesProjectData.owner),
+  }
+];
+
+
+export const lineChartOptionsDashboard2 = {
+  chart: {
+    toolbar: {
+      show: false,
+    },
+  },
+  tooltip: {
+    theme: "dark",
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  stroke: {
+    curve: "straight",
+  },
+  xaxis: {
+    type: "datetime",
+    
+    categories:tablesProjectData.map((tablesProjectData) => tablesProjectData.name), 
+     
+    
+    
+    labels: {
+      style: {
+        colors: "#c8cfca",
+        fontSize: "12px",
+      },
+    },
+    axisBorder: {
+      show: false,
+    },
+    axisTicks: {
+      show: false,
+    },
+  },
+  yaxis: {
+    labels: {
+      style: {
+        colors: "#c8cfca",
+        fontSize: "12px",
+      },
+    },
+  },
+  legend: {
+    show: false,
+  },
+  grid: {
+    strokeDashArray: 5,
+    borderColor: "#56577A"
+  },
+  fill: {
+    type: "gradient",
+    gradient: {
+      shade: "dark",
+      type: "vertical",
+      shadeIntensity: 0,
+      gradientToColors: undefined, // optional, if not defined - uses the shades of same color in series
+      inverseColors: true,
+      opacityFrom: 0.8,
+      opacityTo: 0,
+      stops: [],
+    },
+    colors: ["#2CD9FF", "#582CFF"],
+  },
+  colors: ["#2CD9FF", "#582CFF"],
+};
+
+
+
+export const pieChartDashboard = {
+  chart: {
+    toolbar: {
+      show: false,
+    },
+  },
+  tooltip: {
+    style: {
+      fontSize: "12px",
+      fontFamily: "Plus Jakarta Display",
+    },
+    onDatasetHover: {
+      style: {
+        fontSize: "12px",
+        fontFamily: "Plus Jakarta Display",
+      },
+    },
+    theme: "dark",
+  },
+  
+    data: ["Azuki", "Mutant Ape", "DeGods", "Pudgy Penguins", "Remillo", "BENZ Official", "R/NFT", "Audius", "CryptoRaptors"],
+  
+  fill: {
+    colors: "#fff",
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  plotOptions: {
+    pie: {
+      Radius: "40px",
+      columnWidth: "12px",
+    },
+  },
+  responsive: [
+    {
+      breakpoint: 768,
+      options: {
+        plotOptions: {
+          bar: {
+            borderRadius: 0,
+          },
+        },
+      },
+    },
+  ],
+};
+
+
+
+
 
 export const lineChartDataProfile1 = [
   {

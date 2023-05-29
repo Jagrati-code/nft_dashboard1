@@ -1,5 +1,3 @@
-
-// Chakra imports
 import {
 	Box,
 	Button,
@@ -30,6 +28,7 @@ import Card from 'components/Card/Card.js';
 import CardBody from 'components/Card/CardBody.js';
 import CardHeader from 'components/Card/CardHeader.js';
 import BarChart from 'components/Charts/BarChart';
+import PieChart from 'components/Charts/PieChart';
 import LineChart from 'components/Charts/LineChart';
 import IconBox from 'components/Icons/IconBox';
 // Icons
@@ -46,7 +45,11 @@ import {
 	barChartDataDashboard,
 	barChartOptionsDashboard,
 	lineChartDataDashboard,
-	lineChartOptionsDashboard
+	lineChartOptionsDashboard2,
+	lineChartDataDashboard2,
+	barChartDataDashboard2,
+	lineChartOptionsDashboard,
+	pieChartDashboard
 } from 'variables/charts';
 import { dashboardTableData, timelineData } from 'variables/general';
 
@@ -420,7 +423,7 @@ export default function Dashboard() {
 							</Box>
 							<Flex direction='column' mt='24px' mb='36px' alignSelf='flex-start'>
 								<Text fontSize='lg' color='#fff' fontWeight='bold' mb='6px'>
-									Value of recent purchased NFTs
+									Type of transactions(currency used for transactions)
 								</Text>
 								<Text fontSize='md' fontWeight='medium' color='gray.400'>
 									<Text as='span' color='green.400' fontWeight='bold'>
@@ -512,62 +515,87 @@ export default function Dashboard() {
 				</Card>
 			</Grid>
 
-			<Grid templateColumns={{ sm: '1fr', md: '1fr 1fr', lg: '2fr 1fr' }} gap='24px'>
-				{/* Projects */}
+
+
+			<Grid
+				templateColumns={{ sm: '1fr', lg: '1.7fr 1.3fr' }}
+				maxW={{ sm: '100%', md: '100%' }}
+				gap='24px'
+				mb='24px'>
+				{/* Sales Overview */}
+				<Card p='16px'>
+					<CardBody>
+					
+						<Flex direction='column' w='100%'>
+						<Text fontSize='lg' color='#fff' fontWeight='bold' mb='6px'>
+									Rairity Graph
+								</Text>
+							<Box
+								bg='linear-gradient(126.97deg, #060C29 28.26%, rgba(4, 12, 48, 0.5) 91.2%)'
+								borderRadius='20px'
+								display={{ sm: 'flex', md: 'block' }}
+								justify={{ sm: 'center', md: 'flex-start' }}
+								align={{ sm: 'center', md: 'flex-start' }}
+								minH={{ sm: '280px', md: '370px' }}
+								p={{ sm: '0px', md: '22px' }}>
+								<BarChart
+									barChartOptions={barChartOptionsDashboard}
+									barChartData={barChartDataDashboard2}
+								/>
+							</Box>
+							
+							
+									
+									
+						</Flex>
+					</CardBody>
+				</Card>
+				
+				{/* Active Users */}
 				<Card p='16px' overflowX={{ sm: 'scroll', xl: 'hidden' }}>
 					<CardHeader p='12px 0px 28px 0px'>
 						<Flex direction='column'>
 							<Text fontSize='lg' color='#fff' fontWeight='bold' pb='8px'>
-								Your Communities
+								Maximum No. of trasactions of a collection
 							</Text>
-							<Flex align='center'>
-								<Icon as={IoCheckmarkDoneCircleSharp} color='teal.300' w={4} h={4} pe='3px' />
-								<Text fontSize='sm' color='gray.400' fontWeight='normal'>
-									<Text fontWeight='bold' as='span'>
-										6 done
-									</Text>{' '}
-									this month.
-								</Text>
-							</Flex>
+							<Box
+								bg='linear-gradient(126.97deg, #060C29 28.26%, rgba(4, 12, 48, 0.5) 91.2%)'
+								borderRadius='20px'
+								display={{ sm: 'flex', md: 'block' }}
+								justify={{ sm: 'center', md: 'flex-start' }}
+								align={{ sm: 'center', md: 'flex-start' }}
+								minH={{ sm: '280px', md: '370px' }}
+								p={{ sm: '0px', md: '22px' }}>
+                               <PieChart>
+								</PieChart>
+								</Box>
+					</Flex>
+					</CardHeader>
+				</Card>
+			</Grid>
+
+
+				{/* Projects */}
+				<Card p='28px 0px 0px 0px'>
+					<CardHeader mb='20px' ps='22px'>
+						<Flex direction='column' alignSelf='flex-start'>
+							<Text fontSize='lg' color='#fff' fontWeight='bold' mb='6px'>
+								TRENDING NFTS/VALUABLE NFTS
+							</Text>
+							<Text fontSize='md' fontWeight='medium' color='gray.400'>
+								
+								in 2023
+							</Text>
 						</Flex>
 					</CardHeader>
-					<Table variant='simple' color='#fff'>
-						<Thead>
-							<Tr my='.8rem' ps='0px'>
-								<Th
-									ps='0px'
-									color='gray.400'
-									fontFamily='Plus Jakarta Display'
-									borderBottomColor='#56577A'>
-									Top Communities
-								</Th>
-								<Th color='gray.400' fontFamily='Plus Jakarta Display' borderBottomColor='#56577A'>
-									NFTs
-								</Th>
-								<Th color='gray.400' fontFamily='Plus Jakarta Display' borderBottomColor='#56577A'>
-									Royalty
-								</Th>
-								<Th color='gray.400' fontFamily='Plus Jakarta Display' borderBottomColor='#56577A'>
-									Your Ownership
-								</Th>
-							</Tr>
-						</Thead>
-						<Tbody>
-							{dashboardTableData.map((row, index, arr) => {
-								return (
-									<DashboardTableRow
-										name={row.name}
-										logo={row.logo}
-										members={row.members}
-										budget={row.budget}
-										progression={row.progression}
-										lastItem={index === arr.length - 1 ? true : false}
-									/>
-								);
-							})}
-						</Tbody>
-					</Table>
+					<Box w='100%' minH={{ sm: '300px' }}>
+						<LineChart
+							lineChartData={lineChartDataDashboard2}
+							lineChartOptions={lineChartOptionsDashboard2}
+						/>
+					</Box>
 				</Card>
+				
 				{/* Orders Overview */}
 				<Card>
 					<CardHeader mb='32px'>
@@ -603,8 +631,6 @@ export default function Dashboard() {
 						</Flex>
 					</CardBody>
 				</Card>
-			</Grid>
-			
 		</Flex>
 	);
 }

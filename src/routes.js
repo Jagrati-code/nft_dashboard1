@@ -6,6 +6,8 @@ import Profile from "views/Dashboard/Profile.js";
 import SignIn from "views/Pages/SignIn.js";
 import SignUp from "views/Pages/SignUp.js";
 import Nft from "views/Dashboard/Nft.js";
+import Collectionpage from "pages/Collectionpage";
+//import nft_page from "pages/nft_page";
 
 import {
   HomeIcon,
@@ -94,4 +96,5 @@ var dashRoutes = [
     ],
   },
 ];
+
 export default dashRoutes;

@@ -10,7 +10,9 @@ const App = () => {
     const handleMenuTwo = () => {
       console.log('clicked two');
     };
-  
+    const { variant, children, ...rest } = props;
+    const searchIconColor = "white";
+    const inputBg = "gray.800";
     return (
 
       <Dropdown
