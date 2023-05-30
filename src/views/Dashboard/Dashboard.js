@@ -29,6 +29,8 @@ import CardBody from 'components/Card/CardBody.js';
 import CardHeader from 'components/Card/CardHeader.js';
 import BarChart from 'components/Charts/BarChart';
 import PieChart from 'components/Charts/PieChart';
+import PolarChart from 'components/Charts/PolarChart';
+import RadialChart from 'components/Charts/RadialChart';
 import LineChart from 'components/Charts/LineChart';
 import IconBox from 'components/Icons/IconBox';
 // Icons
@@ -52,6 +54,7 @@ import {
 	pieChartDashboard
 } from 'variables/charts';
 import { dashboardTableData, timelineData } from 'variables/general';
+//import RadialChart from 'components/Charts/RadialChart';
 
 export default function Dashboard() {
 	return (
@@ -583,6 +586,69 @@ export default function Dashboard() {
 					</Box>
 				</Card>
 				
+
+				<Grid
+				margin={{md:'10px' , lg:'20px'}}
+				templateColumns={{ sm: '1fr', lg: '1.7fr 1.3fr' }}
+				maxW={{ sm: '100%', md: '100%' }}
+				gap='24px'
+				mb='24px'>
+				{/* Sales Overview */}
+				<Card p='16px'>
+					<CardBody>
+					
+						<Flex direction='column' w='100%'>
+						<Text fontSize='lg' color='#fff' fontWeight='bold' mb='6px'>
+									Top 10 cheapest NFTs
+								</Text>
+							<Box
+								bg='linear-gradient(126.97deg, #060C29 28.26%, rgba(4, 12, 48, 0.5) 91.2%)'
+								borderRadius='20px'
+								display={{ sm: 'flex', md: 'block' }}
+								justify={{ sm: 'center', md: 'flex-start' }}
+								align={{ sm: 'center', md: 'flex-start' }}
+								minH={{ sm: '280px', md: '370px' }}
+								p={{ sm: '0px', md: '22px' }}>
+					        <RadialChart>
+
+							</RadialChart>
+							</Box>
+							
+							
+									
+									
+						</Flex>
+					</CardBody>
+				</Card>
+				
+				{/* Active Users */}
+				<Card p='16px' overflowX={{ sm: 'scroll', xl: 'hidden' }}>
+					<CardHeader p='12px 0px 28px 0px'>
+						<Flex direction='column'>
+							<Text fontSize='lg' color='#fff' fontWeight='bold' pb='8px'>
+								Size of community
+							</Text>
+							<Box
+								bg='linear-gradient(126.97deg, #060C29 28.26%, rgba(4, 12, 48, 0.5) 91.2%)'
+								borderRadius='20px'
+								display={{ sm: 'flex', md: 'block' }}
+								justify={{ sm: 'center', md: 'flex-start' }}
+								align={{ sm: 'center', md: 'flex-start' }}
+								minH={{ sm: '280px', md: '370px' }}
+								p={{ sm: '0px', md: '22px' }}>
+                               <PolarChart>
+
+							   </PolarChart>
+								</Box>
+					</Flex>
+					</CardHeader>
+				</Card>
+			</Grid>
+
+
+
+
+
 				{/* Orders Overview */}
 				<Card>
 					<CardHeader mb='32px'>

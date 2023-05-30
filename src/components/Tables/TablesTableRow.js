@@ -12,7 +12,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
-import Collectionpage from "pages/Collectionpage";
+
 //import { pageRoutes } from "routes";
 
 function TablesTableRow(props) {
