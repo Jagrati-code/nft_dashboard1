@@ -1,17 +1,108 @@
+import { useEffect } from "react";
 import { tablesProjectData } from "variables/general";
-export const barChartDataDashboard = [
+
+export const transactionsTypeDataDashboard = [
   {
-    name: "Current Value",
-    data: [330, 250, 110, 300, 490, 350, 270, 130, 425],
+    name: "Transactions",
+    data: [34, 72, 6, 12, 16, 2, 8],
   },
 ];
 
-export const barChartOptionsDashboard = {
+export const transactionsTypeOptionsDashboard = {
+
   chart: {
     toolbar: {
       show: false,
     },
   },
+
+  tooltip: {
+    style: {
+      fontSize: "16px",
+      fontFamily: "Plus Jakarta Display",
+    },
+    onDatasetHover: {
+      style: {
+        fontSize: "16px",
+        fontFamily: "Plus Jakarta Display",
+      },
+    },
+    theme: "dark",
+  },
+
+  xaxis: {
+    categories: ['polygon', 'Ethereum', 'Bitcoin', 'Solana', 'BNB Chain', 'Klaytn', 'Optimism'],
+    show: true,
+    labels: {
+      show: true,
+      style: {
+        colors: "#fff",
+        fontSize: "12px",
+      },
+    },
+    axisBorder: {
+      show: true,
+    },
+    axisTicks: {
+      show: true,
+    },
+  },
+
+  yaxis: {
+    show: true,
+    color: "#fff",
+    labels: {
+      show: true,
+      style: {
+        colors: "#fff",
+        fontSize: "12px",
+        fontFamily: "Plus Jakarta Display",
+      },
+    },
+  },
+
+  grid: {
+    show: false,
+  },
+
+  fill: {
+    colors: "#fff",
+  },
+
+  dataLabels: {
+    enabled: false,
+  },
+
+  plotOptions: {
+    bar: {
+      borderRadius: 8,
+      columnWidth: "12px",
+    },
+  },
+
+  responsive: [
+    {
+      breakpoint: 768,
+      options: {
+        plotOptions: {
+          bar: {
+            borderRadius: 0,
+          },
+        },
+      },
+    },
+  ],
+
+};
+
+export const rarityChartOptionsDashboard = {
+
+  chart: {
+    toolbar: {
+      show: false,
+    },
+  },
+
   tooltip: {
     style: {
       fontSize: "12px",
@@ -25,6 +116,7 @@ export const barChartOptionsDashboard = {
     },
     theme: "dark",
   },
+
   xaxis: {
     categories: ["Azuki", "Mutant Ape", "DeGods", "Pudgy Penguins", "Remillo", "BENZ Official", "R/NFT", "Audius", "CryptoRaptors"],
     show: false,
@@ -42,6 +134,7 @@ export const barChartOptionsDashboard = {
       show: false,
     },
   },
+
   yaxis: {
     show: true,
     color: "#fff",
@@ -54,21 +147,26 @@ export const barChartOptionsDashboard = {
       },
     },
   },
+
   grid: {
     show: false,
   },
+
   fill: {
     colors: "#fff",
   },
+
   dataLabels: {
     enabled: false,
   },
+
   plotOptions: {
     bar: {
       borderRadius: 8,
       columnWidth: "12px",
     },
   },
+
   responsive: [
     {
       breakpoint: 768,
@@ -81,6 +179,108 @@ export const barChartOptionsDashboard = {
       },
     },
   ],
+
+};
+
+export const rarityChartDataDashboard = [
+  {
+    name: "NO. of owners",
+    data: tablesProjectData.map((tablesProjectData) => tablesProjectData.owner),
+  }
+]
+
+export const barChartDataDashboard = [
+  {
+    name: "Current Value",
+    data: [330, 250, 110, 300, 490, 350, 270, 130, 425],
+  },
+];
+
+export const barChartOptionsDashboard = {
+
+  chart: {
+    toolbar: {
+      show: false,
+    },
+  },
+
+  tooltip: {
+    style: {
+      fontSize: "12px",
+      fontFamily: "Plus Jakarta Display",
+    },
+    onDatasetHover: {
+      style: {
+        fontSize: "12px",
+        fontFamily: "Plus Jakarta Display",
+      },
+    },
+    theme: "dark",
+  },
+
+  xaxis: {
+    categories: ["Azuki", "Mutant Ape", "DeGods", "Pudgy Penguins", "Remillo", "BENZ Official", "R/NFT", "Audius", "CryptoRaptors"],
+    show: false,
+    labels: {
+      show: false,
+      style: {
+        colors: "#fff",
+        fontSize: "12px",
+      },
+    },
+    axisBorder: {
+      show: false,
+    },
+    axisTicks: {
+      show: false,
+    },
+  },
+
+  yaxis: {
+    show: true,
+    color: "#fff",
+    labels: {
+      show: true,
+      style: {
+        colors: "#fff",
+        fontSize: "12px",
+        fontFamily: "Plus Jakarta Display",
+      },
+    },
+  },
+
+  grid: {
+    show: false,
+  },
+
+  fill: {
+    colors: "#fff",
+  },
+
+  dataLabels: {
+    enabled: false,
+  },
+
+  plotOptions: {
+    bar: {
+      borderRadius: 8,
+      columnWidth: "12px",
+    },
+  },
+
+  responsive: [
+    {
+      breakpoint: 768,
+      options: {
+        plotOptions: {
+          bar: {
+            borderRadius: 0,
+          },
+        },
+      },
+    },
+  ],
+
 };
 
 export const lineChartDataDashboard = [
@@ -179,8 +379,8 @@ export const barChartDataDashboard2 = [
 
 export const lineChartDataDashboard2 = [
   {
-    name: "NO. of owners",
-    data: tablesProjectData.map((tablesProjectData) => tablesProjectData.owner),
+    name: "% Price Rise",
+    data: [3.5,4.2,4.7,6,6,2],
   }
 ];
 
@@ -195,7 +395,7 @@ export const lineChartOptionsDashboard2 = {
     theme: "dark",
   },
   dataLabels: {
-    enabled: false,
+    enabled: true,
   },
   stroke: {
     curve: "straight",
@@ -203,7 +403,7 @@ export const lineChartOptionsDashboard2 = {
   xaxis: {
     type: "datetime",
     
-    categories:tablesProjectData.map((tablesProjectData) => tablesProjectData.name), 
+    categories:['Mutant monkey 699', 'AtemCard1', 'Dna 3629', "Doodle 232", "Melady 898" ],
      
     
     
@@ -274,7 +474,9 @@ export const pieChartDashboard = {
     theme: "dark",
   },
   
-    data: ["Azuki", "Mutant Ape", "DeGods", "Pudgy Penguins", "Remillo", "BENZ Official", "R/NFT", "Audius", "CryptoRaptors"],
+    data: ['Mutant monkey 699', 'AtemCard1', 'Mutant monkey 271', 'Mutant monkey 284', 'Mutant monkey 7842', 'Mutant monkey 4931', 
+            'AtemCard4', 'Dna 3629', 'Mutant monkey 90834', "Doodle 232", "Dna 529" , "Melady 898", "Mutant monkey 625",   "Melady 111",    "Mutant monkey 9032",   "Doodle 121",     
+            "Curious_Cabins 2581",  "DEyes 412",  "Curious_Cabins 73509", "Curious_Cabins 1818"          ],
   
   fill: {
     colors: "#fff",

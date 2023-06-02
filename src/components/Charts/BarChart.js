@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import Chart from "react-apexcharts";
 
 class BarChart extends Component {
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -21,7 +22,9 @@ class BarChart extends Component {
     });
   }
 
+
   render() {
+    
     return (
       <Chart
         options={this.state.chartOptions}

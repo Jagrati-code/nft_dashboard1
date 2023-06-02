@@ -1,26 +1,5 @@
-import {
-	Box,
-	Button,
-	CircularProgress,
-	CircularProgressLabel,
-	Flex,
-	Grid,
-	Icon,
-	Progress,
-	SimpleGrid,
-	Spacer,
-	Stack,
-	Stat,
-	StatHelpText,
-	StatLabel,
-	StatNumber,
-	Table,
-	Tbody,
-	Text,
-	Th,
-	Thead,
-	Tr
-} from '@chakra-ui/react';
+import {Box,Button,CircularProgress,CircularProgressLabel,Flex,Grid,Icon,Progress,SimpleGrid,Spacer,Stack,Stat,StatHelpText,StatLabel,
+	StatNumber,Table,Tbody,Text,Th,Thead,Tr} from '@chakra-ui/react';
 // Styles for the circular progressbar
 import medusa from 'assets/img/cardimgfree.png';
 // Custom components
@@ -35,12 +14,12 @@ import IconBox from 'components/Icons/IconBox';
 import { CartIcon, DocumentIcon, GlobeIcon, RocketIcon, StatsIcon, WalletIcon } from 'components/Icons/Icons.js';
 import DashboardTableRow from 'components/Tables/DashboardTableRow';
 import TimelineRow from 'components/Tables/TimelineRow';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { AiFillCheckCircle } from 'react-icons/ai';
 import { BiHappy } from 'react-icons/bi';
 import { BsArrowRight } from 'react-icons/bs';
 import { IoCheckmarkDoneCircleSharp, IoEllipsisHorizontal } from 'react-icons/io5';
-// Data
+
 import {
 	barChartDataDashboard,
 	barChartOptionsDashboard,
@@ -49,13 +28,147 @@ import {
 	lineChartDataDashboard2,
 	barChartDataDashboard2,
 	lineChartOptionsDashboard,
+	transactionsTypeOptionsDashboard,
+	transactionsTypeDataDashboard,
 	pieChartDashboard
 } from 'variables/charts';
+
+import DashboardData from 'variables/DashboardData.js';
+
+
 import { dashboardTableData, timelineData } from 'variables/general';
+
+import { useAuthContext } from "hooks/useAuthContext";
+import { useState } from 'react';
+
 
 
 
 export default function Dashboard() {
+
+	const { user } = useAuthContext();
+	const [transactions, setTransactions] = useState([]);
+	const [nfts, setNfts] = useState([]);
+	const [collections, setCollections] = useState([]);
+
+
+	useEffect( () => {
+    
+		const fetchTransactions = async () => {
+	
+		  try {
+			const response = await fetch('http://localhost:8800/api/transaction/all', {
+			  "headers" : { Authorization: `Bearer ${user.token}` } 
+			});
+			const json = await response.json();
+	
+			console.log("data..." ,json);
+	
+			setTransactions(json.data);
+	
+		  } catch (error) {
+			console.error("Error in fetching data ",error);
+		  }
+		}
+
+		const fetchNfts = async () => {
+	
+			try {
+			  const response = await fetch('http://localhost:8800/api/nft/all', {
+				"headers" : { Authorization: `Bearer ${user.token}` } 
+			  });
+			  const json = await response.json();
+	  
+			  console.log("nfts..." ,json);
+	  
+			  setNfts(json.data);
+	  
+			} catch (error) {
+			  console.error("Error in fetching data ",error);
+			}
+		}
+
+		const fetchCollections = async () => {
+	
+			try {
+			  const response = await fetch('http://localhost:8800/api/collection/all', {
+				"headers" : { Authorization: `Bearer ${user.token}` } 
+			  });
+			  const json = await response.json();
+	  
+			  console.log("collections..." ,json);
+	  
+			  setCollections(json.data);
+	  
+			} catch (error) {
+			  console.error("Error in fetching data ",error);
+			}
+		}
+	
+		if(user){
+			fetchTransactions();
+			fetchNfts();
+			fetchCollections();
+		}
+	
+	
+	  }, [user]);
+
+	
+	const transactionsTypeData = () => {
+
+		const typeCounts = {};
+
+		for (const transaction of transactions) {
+			
+			const { Type } = transaction;
+
+			if (typeCounts[Type])
+				typeCounts[Type]++;
+			else 
+				typeCounts[Type] = 1;
+			
+		}
+
+		const Types = Object.keys(typeCounts);
+		const counts = Object.values(typeCounts);
+
+
+		var typeOptions = barChartOptionsDashboard;
+		var typeData = barChartDataDashboard;
+
+		typeOptions.xaxis.categories = Types;
+		typeData[0].data = counts;
+
+		return {typeOptions, typeData};
+
+	}
+
+	const collectionData = () => {
+
+		const dict = {};
+
+		for (const nft of nfts) {
+			
+			const { CollectionId , NoOfTransactions} = nft;
+
+			if (dict[CollectionId])
+				dict[CollectionId] += NoOfTransactions;
+			else 
+				dict[CollectionId] = NoOfTransactions;
+			
+		}
+
+		const Cid = Object.keys(dict);
+		const n = Object.values(dict);
+
+		return {Cid, n};
+
+	}
+
+	const {typeOptions, typeData} = transactionsTypeData();
+	const cdata = collectionData();
+	console.log(cdata);
 
 	return (
 
@@ -206,13 +319,13 @@ export default function Dashboard() {
 									Welcome back,
 								</Text>
 								<Text fontSize='28px' color='#fff' fontWeight='bold' mb='18px'>
-									User
+									{user ? user.username: "User"}
 								</Text>
 								<Text fontSize='md' color='gray.400' fontWeight='normal' mb='auto'>
 									Glad to see you again! <br />
 									
 								</Text>
-								<Spacer />
+								{/* <Spacer />
 								<Flex align='center'>
 									<Button
 										p='0px'
@@ -242,13 +355,13 @@ export default function Dashboard() {
 											_hover={{ transform: 'translateX(20%)' }}
 										/>
 									</Button>
-								</Flex>
+								</Flex> */}
 							</Flex>
 						</Flex>
 					</CardBody>
 				</Card>
 				{/* Satisfaction Rate */}
-				<Card gridArea={{ md: '2 / 1 / 3 / 2', '2xl': 'auto' }}>
+				{/* <Card gridArea={{ md: '2 / 1 / 3 / 2', '2xl': 'auto' }}>
 					<CardHeader mb='24px'>
 						<Flex direction='column'>
 							<Text color='#fff' fontSize='lg' fontWeight='bold' mb='4px'>
@@ -303,7 +416,7 @@ export default function Dashboard() {
 						</Stack>
 					</Flex>
 				</Card>
-				{/* Referral Tracking */}
+				
 				<Card gridArea={{ md: '2 / 2 / 3 / 3', '2xl': 'auto' }}>
 					<Flex direction='column'>
 						<Flex justify='space-between' align='center' mb='40px'>
@@ -374,7 +487,7 @@ export default function Dashboard() {
 							</Box>
 						</Flex>
 					</Flex>
-				</Card>
+				</Card> */}
 			</Grid>
 
 			<Grid
@@ -404,7 +517,8 @@ export default function Dashboard() {
 						/>
 					</Box>
 				</Card>
-				{/* Active Users */}
+
+				{/* Type of Transactions*/}
 				<Card p='16px'>
 					<CardBody>
 						<Flex direction='column' w='100%'>
@@ -417,8 +531,8 @@ export default function Dashboard() {
 								minH={{ sm: '180px', md: '220px' }}
 								p={{ sm: '0px', md: '22px' }}>
 								<BarChart
-									barChartOptions={barChartOptionsDashboard}
-									barChartData={barChartDataDashboard}
+									barChartOptions={transactionsTypeOptionsDashboard}
+									barChartData={transactionsTypeDataDashboard}
 								/>
 							</Box>
 							<Flex direction='column' mt='24px' mb='36px' alignSelf='flex-start'>
@@ -522,34 +636,9 @@ export default function Dashboard() {
 				maxW={{ sm: '100%', md: '100%' }}
 				gap='24px'
 				mb='24px'>
-				{/* Sales Overview */}
-				<Card p='16px'>
-					<CardBody>
-					
-						<Flex direction='column' w='100%'>
-						<Text fontSize='lg' color='#fff' fontWeight='bold' mb='6px'>
-									Rairity Graph
-								</Text>
-							<Box
-								bg='linear-gradient(126.97deg, #060C29 28.26%, rgba(4, 12, 48, 0.5) 91.2%)'
-								borderRadius='20px'
-								display={{ sm: 'flex', md: 'block' }}
-								justify={{ sm: 'center', md: 'flex-start' }}
-								align={{ sm: 'center', md: 'flex-start' }}
-								minH={{ sm: '280px', md: '370px' }}
-								p={{ sm: '0px', md: '22px' }}>
-								<BarChart
-									barChartOptions={barChartOptionsDashboard}
-									barChartData={barChartDataDashboard2}
-								/>
-							</Box>
-							
-							
-									
-									
-						</Flex>
-					</CardBody>
-				</Card>
+
+				{/* Rarity Graph */}
+				<DashboardData nfts={nfts}/>
 				
 				{/* Active Users */}
 				<Card p='16px' overflowX={{ sm: 'scroll', xl: 'hidden' }}>
@@ -568,7 +657,7 @@ export default function Dashboard() {
 								p={{ sm: '0px', md: '22px' }}>
                                <PieChart>
 								</PieChart>
-								</Box>
+							</Box>
 					</Flex>
 					</CardHeader>
 				</Card>
@@ -597,7 +686,7 @@ export default function Dashboard() {
 				</Card>
 				
 				{/* Orders Overview */}
-				<Card>
+				{/* <Card>
 					<CardHeader mb='32px'>
 						<Flex direction='column'>
 							<Text fontSize='lg' color='#fff' fontWeight='bold' mb='6px'>
@@ -630,7 +719,7 @@ export default function Dashboard() {
 							})}
 						</Flex>
 					</CardBody>
-				</Card>
+				</Card> */}
 		</Flex>
 	);
 }

@@ -1,19 +1,6 @@
 import { Avatar, Badge, Button, Flex, Td, Text, Tr, useColorModeValue } from "@chakra-ui/react";
 import React, { useState } from "react";
 
-
-import {
-  Avatar,
-  Link,
-  Badge,
-  Button,
-  Flex,
-  Td,
-  Text,
-  Tr,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import React from "react";
 import Collectionpage from "pages/Collectionpage";
 //import { pageRoutes } from "routes";
 import DynamicImports from "components/DynamicImports.mjs";
@@ -29,9 +16,7 @@ function TablesTableRow(props) {
     setModule(mod);
   })
 
-  //const textColor = useColorModeValue("gray.700", "white");
-  //const bgStatus = useColorModeValue("gray.400", "#1a202c");
-
+ 
   const colorStatus = useColorModeValue("white", "gray.400");
 
   return (
@@ -82,29 +67,12 @@ function TablesTableRow(props) {
         </Text>
       </Td>
 
-      {/* <Td border={lastItem ? "none" : null} borderBottomColor='#56577A'>
-        <Text fontSize='sm' color='#fff' fontWeight='normal'>
-          {description}
-        </Text>
-      </Td> */}
-
       <Td border={lastItem ? "none" : null} borderBottomColor='#56577A'>
         <Text fontSize='sm' color='#fff' fontWeight='normal'>
           {new Date(date).toISOString().split("T")[0]}
         </Text>
       </Td>
 
-      <Td border={lastItem ? "none" : null} borderBottomColor='#56577A'>
-        <Button p='0px' bg='transparent' variant='no-hover'>
-          <Text
-            fontSize='sm'
-            color='gray.400'
-            fontWeight='bold'
-            cursor='pointer'>
-            View
-          </Text>
-        </Button>
-      </Td>
 
     </Tr>
   );

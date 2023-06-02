@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './App.css';
 
-const App = () => {
+const App = (props) => {
 
     const handleMenuOne = () => {
       console.log('clicked one');

@@ -7,7 +7,7 @@ import SignIn from "views/Pages/SignIn.js";
 import SignUp from "views/Pages/SignUp.js";
 import Nft from "views/Dashboard/Nft.js";
 import Collectionpage from "pages/Collectionpage";
-//import nft_page from "pages/nft_page";
+
 
 import {
   HomeIcon,
@@ -37,14 +37,6 @@ var dashRoutes = [
     layout: "/admin",
   },
 
-  // {
-  //   path: "/billing",
-  //   name: "Billing",
-  //   icon: <CreditIcon color='inherit' />,
-  //   component: Billing,
-  //   layout: "/admin",
-  // },
-
   {
     path: "/nfts",
     name: "NFTs",
@@ -52,13 +44,7 @@ var dashRoutes = [
     component: Nft,
     layout: "/admin",
   },
-  // {
-  //   path: "/rtl-support-page",
-  //   name: "RTL",
-  //   icon: <SupportIcon color='inherit' />,
-  //   component: RTLPage,
-  //   layout: "/rtl",
-  // },
+
 
   {
     name: "ACCOUNT PAGES",
@@ -67,14 +53,7 @@ var dashRoutes = [
 
     views: [
 
-      // {
-      //   path: "/profile",
-      //   name: "Profile",
-      //   icon: <PersonIcon color='inherit' />,
-      //   secondaryNavbar: true,
-      //   component: Profile,
-      //   layout: "/admin",
-      // },
+      
 
       {
         path: "/signin",
